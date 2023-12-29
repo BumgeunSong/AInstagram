@@ -31,10 +31,15 @@ struct ProfileView: View {
                         .fontWeight(.semibold)
                         .frame(width: 360, height: 32)
                         .foregroundStyle(.black)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(.gray)
-                        )
+                        .overlay(alignment: .center) {
+                            RoundedRectangle(
+                                cornerSize: CGSize(
+                                    width: 6,
+                                    height: 6
+                                ),
+                                style: .circular
+                            ).stroke(.gray)
+                        }
                 })
                 
                 Divider()
