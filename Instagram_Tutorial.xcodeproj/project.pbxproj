@@ -51,7 +51,10 @@
 		BC1D574D2B3F065D00D05008 /* Instagram_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				BC1D574E2B3F065D00D05008 /* Instagram_TutorialApp.swift */,
+				BC1D57612B3F067B00D05008 /* Core */,
+				BC1D57602B3F067200D05008 /* App */,
+				BC1D575D2B3F067100D05008 /* Model */,
+				BC1D575C2B3F066B00D05008 /* Services */,
 				BC1D57502B3F065D00D05008 /* ContentView.swift */,
 				BC1D57522B3F065E00D05008 /* Assets.xcassets */,
 				BC1D57542B3F065E00D05008 /* Preview Content */,
@@ -65,6 +68,91 @@
 				BC1D57552B3F065E00D05008 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BC1D575C2B3F066B00D05008 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BC1D575D2B3F067100D05008 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC1D57602B3F067200D05008 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BC1D574E2B3F065D00D05008 /* Instagram_TutorialApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BC1D57612B3F067B00D05008 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BC1D57682B3F06FF00D05008 /* TabBar */,
+				BC1D57672B3F06FE00D05008 /* UploadPost */,
+				BC1D57662B3F06F500D05008 /* Search */,
+				BC1D57652B3F06ED00D05008 /* Root */,
+				BC1D57642B3F06E300D05008 /* Profile */,
+				BC1D57632B3F06DD00D05008 /* Feed */,
+				BC1D57622B3F06B100D05008 /* Auth */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BC1D57622B3F06B100D05008 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BC1D57632B3F06DD00D05008 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		BC1D57642B3F06E300D05008 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BC1D57652B3F06ED00D05008 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		BC1D57662B3F06F500D05008 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BC1D57672B3F06FE00D05008 /* UploadPost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UploadPost;
+			sourceTree = "<group>";
+		};
+		BC1D57682B3F06FF00D05008 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
