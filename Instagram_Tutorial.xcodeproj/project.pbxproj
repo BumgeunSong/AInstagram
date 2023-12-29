@@ -12,6 +12,7 @@
 		BC1D57532B3F065E00D05008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1D57522B3F065E00D05008 /* Assets.xcassets */; };
 		BC1D57562B3F065E00D05008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC1D57552B3F065E00D05008 /* Preview Assets.xcassets */; };
 		BC1D576A2B3F07D800D05008 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57692B3F07D800D05008 /* MainTabView.swift */; };
+		BC1D576E2B3F090800D05008 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D576D2B3F090800D05008 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BC1D57522B3F065E00D05008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC1D57552B3F065E00D05008 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC1D57692B3F07D800D05008 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		BC1D576D2B3F090800D05008 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		BC1D57642B3F06E300D05008 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BC1D576D2B3F090800D05008 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1D576E2B3F090800D05008 /* ProfileView.swift in Sources */,
 				BC1D57512B3F065D00D05008 /* ContentView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
 				BC1D576A2B3F07D800D05008 /* MainTabView.swift in Sources */,
