@@ -18,9 +18,15 @@ struct ProfileView: View {
                 }
                 
                 // name and bio
-                VStack {
-                    
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Bumgeun Song")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                    Text("love writing / programming")
+                        .font(.footnote)
                 }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                .padding(.horizontal)
                 
                 // action button
                 Button(action: {
