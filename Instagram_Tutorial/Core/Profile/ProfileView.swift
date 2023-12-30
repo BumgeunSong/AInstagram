@@ -11,11 +11,23 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             // header
-            VStack {
+            VStack(spacing: 10) {
                 /// pic and stats
                 HStack {
-                    
+                    Image(.eddyDesc)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
+                    Spacer()
+                    HStack(spacing: 16) {
+                        UserStatView(title: "Posts", value: 3)
+                        UserStatView(title: "Followers", value: 12)
+                        UserStatView(title: "Following", value: 30)
+                    }
+                    .padding(16)
                 }
+                .padding(.horizontal)
                 
                 // name and bio
                 VStack(alignment: .leading, spacing: 4) {
