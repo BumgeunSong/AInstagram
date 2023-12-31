@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    private let gridItems: [GridItem] = [
+        .init(.flexible(), spacing: 1),
+        .init(.flexible(), spacing: 1),
+        .init(.flexible(), spacing: 1)
+    ]
+    
     var body: some View {
         VStack {
             // header
@@ -64,6 +71,15 @@ struct ProfileView: View {
             }
             
             // post grid view
+            ScrollView {
+                LazyVGrid(columns: gridItems, spacing: 1, content: {
+                    ForEach(0..<10) { index in
+                        Image(.london).resizable().scaledToFill()
+                        Image(.paris).resizable().scaledToFill()
+                        Image(.seoul).resizable().scaledToFill()
+                    }
+                })
+            }
         }
     }
 }
