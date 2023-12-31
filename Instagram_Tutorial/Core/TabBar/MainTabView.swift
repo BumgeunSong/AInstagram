@@ -18,7 +18,7 @@ struct MainTabView: View {
                 .tabItem { Image(systemName: "plus.square") }
             Text("Notifications")
                 .tabItem { Image(systemName: "heart") }
-            Text("Profile")
+            ProfileView()
                 .tabItem { Image(systemName: "person") }
         }
         .tint(.black)
