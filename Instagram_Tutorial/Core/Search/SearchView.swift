@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var text: String = ""
+    @State var searchText: String = ""
+    var searchResult: [UserData] {
+        if searchText.isEmpty { return dummyUsers }
+        return dummyUsers.filter { user in
+            user.username.contains(searchText)
+        }
+    }
     
     let dummyUsers: [UserData] = [
         UserData(
@@ -37,7 +43,7 @@ struct SearchView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 8) {
-                    ForEach(dummyUsers, id: \.id) { user in
+                    ForEach(searchResult, id: \.id) { user in
                         UserSummaryCell(user: user)
                     }
                 }
@@ -45,7 +51,7 @@ struct SearchView: View {
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }.searchable(
-            text: $text,
+            text: $searchText,
             placement: .toolbar,
             prompt: "다른 유저의 아이디를 검색하세요"
         )
