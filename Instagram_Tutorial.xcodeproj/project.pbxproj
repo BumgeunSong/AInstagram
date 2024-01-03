@@ -18,6 +18,8 @@
 		BC1D57752B41551800D05008 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57742B41551800D05008 /* FeedCell.swift */; };
 		BC1D57772B425F8600D05008 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57762B425F8600D05008 /* SearchView.swift */; };
 		BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577A2B4263C000D05008 /* UserSummaryCell.swift */; };
+		BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577C2B443C6F00D05008 /* LoginView.swift */; };
+		BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577E2B44F4F500D05008 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		BC1D57742B41551800D05008 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		BC1D57762B425F8600D05008 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BC1D577A2B4263C000D05008 /* UserSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummaryCell.swift; sourceTree = "<group>"; };
+		BC1D577C2B443C6F00D05008 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BC1D577E2B44F4F500D05008 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 		BC1D57622B3F06B100D05008 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BC1D577C2B443C6F00D05008 /* LoginView.swift */,
+				BC1D577E2B44F4F500D05008 /* SignUpView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 				BC1D57512B3F065D00D05008 /* ContentView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
 				BC1D57772B425F8600D05008 /* SearchView.swift in Sources */,
+				BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
+				BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */,
 				BC1D576A2B3F07D800D05008 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
