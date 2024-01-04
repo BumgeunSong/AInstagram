@@ -20,6 +20,7 @@
 		BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577A2B4263C000D05008 /* UserSummaryCell.swift */; };
 		BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577C2B443C6F00D05008 /* LoginView.swift */; };
 		BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577E2B44F4F500D05008 /* SignUpView.swift */; };
+		BC1D57812B46497A00D05008 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57802B46497A00D05008 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BC1D577A2B4263C000D05008 /* UserSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSummaryCell.swift; sourceTree = "<group>"; };
 		BC1D577C2B443C6F00D05008 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BC1D577E2B44F4F500D05008 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BC1D57802B46497A00D05008 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		BC1D575D2B3F067100D05008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC1D57802B46497A00D05008 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
+				BC1D57812B46497A00D05008 /* User.swift in Sources */,
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
 				BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */,
 				BC1D576A2B3F07D800D05008 /* MainTabView.swift in Sources */,
