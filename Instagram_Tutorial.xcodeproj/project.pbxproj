@@ -21,6 +21,7 @@
 		BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577C2B443C6F00D05008 /* LoginView.swift */; };
 		BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D577E2B44F4F500D05008 /* SignUpView.swift */; };
 		BC1D57812B46497A00D05008 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57802B46497A00D05008 /* User.swift */; };
+		BC1D57832B482C5800D05008 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57822B482C5800D05008 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BC1D577C2B443C6F00D05008 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BC1D577E2B44F4F500D05008 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BC1D57802B46497A00D05008 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BC1D57822B482C5800D05008 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1D57802B46497A00D05008 /* User.swift */,
+				BC1D57822B482C5800D05008 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				BC1D576E2B3F090800D05008 /* ProfileView.swift in Sources */,
 				BC1D57512B3F065D00D05008 /* ContentView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
+				BC1D57832B482C5800D05008 /* Post.swift in Sources */,
 				BC1D57772B425F8600D05008 /* SearchView.swift in Sources */,
 				BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
