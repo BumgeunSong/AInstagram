@@ -14,6 +14,19 @@ struct Post: Identifiable, Codable {
     let likes: Int
     let caption: String?
     let createdAt: Date
+    
+    static var relativeDateFormatter: RelativeDateTimeFormatter {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter
+    }
+    
+    var relativeDate: String {
+        Post.relativeDateFormatter.localizedString(
+            for: createdAt,
+            relativeTo: .now
+        )
+    }
 }
 
 extension Post {
