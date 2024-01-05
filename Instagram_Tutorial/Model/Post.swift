@@ -57,7 +57,7 @@ extension Post {
         ),
         Post(
             id: UUID().uuidString,
-            creator: .mock[3],
+            creator: .mock[0],
             imageURL: "house",
             likes: 1,
             createdAt: .now

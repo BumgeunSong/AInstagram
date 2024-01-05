@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    let user: User
+    let posts: [Post] = Post.mock
+    
     var body: some View {
         NavigationStack {
             ScrollView {
-                ProfileHeaderView()
-                UserPostGridView()
+                ProfileHeaderView(user: user)
+                UserPostGridView(user: user, posts: posts)
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
@@ -30,10 +33,13 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(user: .mock[0])
 }
 
 struct ProfileHeaderView: View {
+    
+    let user: User
+    
     var body: some View {
         VStack(spacing: 10) {
             /// pic and stats
@@ -90,6 +96,13 @@ struct ProfileHeaderView: View {
 }
 
 struct UserPostGridView: View {
+    
+    let user: User
+    let posts: [Post]
+    var postsOfUser: [Post] {
+        posts.filter { $0.creator.id == user.id }
+    }
+    
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
@@ -98,10 +111,10 @@ struct UserPostGridView: View {
     
     var body: some View {
         LazyVGrid(columns: gridItems, spacing: 1, content: {
-            ForEach(0..<10) { index in
-                Image(.london).resizable().scaledToFill()
-                Image(.paris).resizable().scaledToFill()
-                Image(.seoul).resizable().scaledToFill()
+            ForEach(postsOfUser) { post in
+                Image(post.imageURL)
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fill)
             }
         })
     }
