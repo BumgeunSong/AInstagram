@@ -9,21 +9,21 @@ import SwiftUI
 
 struct UserSummaryCell: View {
     
-    let user: UserData
+    let user: User
     
     var body: some View {
         HStack {
-            Image(user.profilePicture)
+            Image(user.profileImageURL)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48, height: 48)
             .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 4) {
-                Text(user.username)
+                Text(user.userName)
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                Text(user.description)
+                Text(user.bio ?? "")
                     .font(.footnote)
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -33,11 +33,5 @@ struct UserSummaryCell: View {
 }
 
 #Preview {
-    UserSummaryCell(
-        user: .init(
-            username: "Eddy Song",
-            description: "love writing / programming",
-            profilePicture: .eddyDesc
-        )
-    )
+    UserSummaryCell(user: .mock[0])
 }

@@ -9,41 +9,18 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText: String = ""
-    var searchResult: [UserData] {
-        if searchText.isEmpty { return dummyUsers }
-        return dummyUsers.filter { user in
-            user.username.contains(searchText)
+    var searchResult: [User] {
+        if searchText.isEmpty { return User.mock }
+        return User.mock.filter { user in
+            user.userName.contains(searchText)
         }
     }
-    
-    let dummyUsers: [UserData] = [
-        UserData(
-            username: "Kim_Garden",
-            description: "Hey you",
-            profilePicture: .seoul
-        ),
-        UserData(
-            username: "Eddy Song",
-            description: "How to beat procrastination",
-            profilePicture: .eddyDesc
-        ),
-        UserData(
-            username: "London boy",
-            description: "love England",
-            profilePicture: .london
-        ),
-        UserData(
-            username: "Eiffel_Tower",
-            description: "Bon jeour",
-            profilePicture: .paris
-        )
-    ]
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 8) {
-                    ForEach(searchResult, id: \.id) { user in
+                    ForEach(searchResult) { user in
                         UserSummaryCell(user: user)
                     }
                 }
