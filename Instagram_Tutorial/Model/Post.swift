@@ -12,7 +12,7 @@ struct Post: Identifiable, Codable {
     let creator: User
     let imageURL: String
     let likes: Int
-    let caption: String?
+    var caption: String = ""
     let createdAt: Date
     
     static var relativeDateFormatter: RelativeDateTimeFormatter {
@@ -60,7 +60,6 @@ extension Post {
             creator: .mock[3],
             imageURL: "house",
             likes: 1,
-            caption: nil,
             createdAt: .now
         ),
     ]
