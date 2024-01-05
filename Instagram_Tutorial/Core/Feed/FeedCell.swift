@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct FeedCell: View {
+    
+    let post: Post
+    
     var body: some View {
         // Profile Pic + Username
         VStack {
             HStack {
-                Image(.eddyDesc)
+                Image(post.creator.profileImageURL)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
                 
-                Text("bumgeun.song")
+                Text(post.creator.userName)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 
@@ -27,7 +30,7 @@ struct FeedCell: View {
             
             
             // Post Image
-            Image(.london)
+            Image(post.imageURL)
                 .resizable().scaledToFill()
                 .frame(height: 400)
                 .clipShape(Rectangle())
@@ -51,7 +54,7 @@ struct FeedCell: View {
             }.padding(.horizontal).padding(.top, 4)
             
             // likes
-            Text("1 likes")
+            Text("\(post.likes) likes")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)  // 왼쪽 정렬로 붙이고 싶을 때
@@ -60,16 +63,16 @@ struct FeedCell: View {
             
             // Post Caption
             HStack {
-                Text("bumgeun.song ")
+                Text("\(post.creator.userName) ")
                     .fontWeight(.semibold) +
-                Text("This is London 🏴󠁧󠁢󠁥󠁮󠁧󠁿 It was real fun experience! ")
+                Text(post.caption)
             }
             .font(.footnote)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
             
             // time
-            Text("5h ago")
+            Text(post.relativeDate)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)  // 왼쪽 정렬로 붙이고 싶을 때
@@ -81,5 +84,5 @@ struct FeedCell: View {
 }
 
 #Preview {
-    FeedCell()
+    FeedCell(post: .mock[0])
 }
