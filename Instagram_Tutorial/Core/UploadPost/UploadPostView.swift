@@ -45,7 +45,7 @@ struct UploadPostView: View {
             
             VStack {
                 Divider().padding(.all)
-                Text("Recent Prompts")
+                Text("최근 프롬프트")
                     .fontWeight(.semibold)
                     .frame(
                         maxWidth: .infinity,
