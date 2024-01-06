@@ -9,34 +9,60 @@ import SwiftUI
 
 struct UploadPostView: View {
     @State private var prompt: String = ""
+    @StateObject private var viewModel = UploadPostViewModel()
+    @State private var selectedPrompt: String? = ""
     
     var body: some View {
-        HStack {
-            Button(action: {}, label: {
-                Image(systemName: "xmark")
-            }).tint(.black)
+        VStack {
+            HStack {
+                Button(action: {}, label: {
+                    Image(systemName: "xmark")
+                }).tint(.black)
+                
+                Spacer()
+                
+                Text("New Post")
+                    .fontWeight(.semibold)
+                
+                Spacer()
+                
+                Button(action: {}, label: {
+                    Text("Next").fontWeight(.semibold)
+                }).tint(.black)
+                
+            }.padding(.horizontal)
+            
+            TextField(
+                "프롬프트를 입력하세요",
+                text: Binding($selectedPrompt, replacingNilWith: ""),
+                axis: .vertical
+            )
+            .frame(minHeight: 200)
+            .padding(.all)
+            
             
             Spacer()
             
-            Text("New Post")
-                .fontWeight(.semibold)
-            
-            Spacer()
-            
-            Button(action: {}, label: {
-                Text("Next").fontWeight(.semibold)
-            }).tint(.black)
-            
-        }.padding(.horizontal)
-        
-        TextField(
-            "프롬프트를 입력하세요",
-            text: $prompt,
-            axis: .vertical
-        )
-        .padding(.all)
-        
-        Spacer()
+            VStack {
+                Divider().padding(.all)
+                Text("Recent Prompts")
+                    .fontWeight(.semibold)
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .leading
+                    )
+                    .padding(.horizontal)
+                List(
+                    viewModel.recentPrompts,
+                    id: \.self,
+                    selection: $selectedPrompt
+                ) { prompt in
+                    Text(prompt)
+                }.listStyle(.plain)
+            }
+        }.task {
+            await viewModel.loadRecentPrompts()
+        }
     }
 }
 
