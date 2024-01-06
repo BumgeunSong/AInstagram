@@ -24,6 +24,7 @@
 		BC1D57832B482C5800D05008 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57822B482C5800D05008 /* Post.swift */; };
 		BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57842B4837E900D05008 /* UserPostGridView.swift */; };
 		BC1D57872B48382800D05008 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57862B48382800D05008 /* ProfileHeaderView.swift */; };
+		BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57882B493F7C00D05008 /* UploadPostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		BC1D57822B482C5800D05008 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BC1D57842B4837E900D05008 /* UserPostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostGridView.swift; sourceTree = "<group>"; };
 		BC1D57862B48382800D05008 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		BC1D57882B493F7C00D05008 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		BC1D57672B3F06FE00D05008 /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
+				BC1D57882B493F7C00D05008 /* UploadPostView.swift */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				BC1D57512B3F065D00D05008 /* ContentView.swift in Sources */,
 				BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
+				BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */,
 				BC1D57832B482C5800D05008 /* Post.swift in Sources */,
 				BC1D57772B425F8600D05008 /* SearchView.swift in Sources */,
 				BC1D57872B48382800D05008 /* ProfileHeaderView.swift in Sources */,
