@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UploadPostView: View {
+    @State private var prompt: String = ""
     
     var body: some View {
         HStack {
@@ -25,7 +26,17 @@ struct UploadPostView: View {
             Button(action: {}, label: {
                 Text("Next").fontWeight(.semibold)
             }).tint(.black)
+            
         }.padding(.horizontal)
+        
+        TextField(
+            "프롬프트를 입력하세요",
+            text: $prompt,
+            axis: .vertical
+        )
+        .padding(.all)
+        
+        Spacer()
     }
 }
 
