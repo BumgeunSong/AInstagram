@@ -25,6 +25,8 @@
 		BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57842B4837E900D05008 /* UserPostGridView.swift */; };
 		BC1D57872B48382800D05008 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57862B48382800D05008 /* ProfileHeaderView.swift */; };
 		BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57882B493F7C00D05008 /* UploadPostView.swift */; };
+		BC1D578B2B49430100D05008 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D578A2B49430100D05008 /* UploadPostViewModel.swift */; };
+		BC1D578D2B494A9400D05008 /* Binding+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D578C2B494A9400D05008 /* Binding+Optional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		BC1D57842B4837E900D05008 /* UserPostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostGridView.swift; sourceTree = "<group>"; };
 		BC1D57862B48382800D05008 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		BC1D57882B493F7C00D05008 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
+		BC1D578A2B49430100D05008 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
+		BC1D578C2B494A9400D05008 /* Binding+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optional.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1D57882B493F7C00D05008 /* UploadPostView.swift */,
+				BC1D578A2B49430100D05008 /* UploadPostViewModel.swift */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1D57702B4046F700D05008 /* UserStatView.swift */,
+				BC1D578C2B494A9400D05008 /* Binding+Optional.swift */,
 				BC1D57842B4837E900D05008 /* UserPostGridView.swift */,
 			);
 			path = Component;
@@ -280,11 +286,13 @@
 				BC1D57512B3F065D00D05008 /* ContentView.swift in Sources */,
 				BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
+				BC1D578D2B494A9400D05008 /* Binding+Optional.swift in Sources */,
 				BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */,
 				BC1D57832B482C5800D05008 /* Post.swift in Sources */,
 				BC1D57772B425F8600D05008 /* SearchView.swift in Sources */,
 				BC1D57872B48382800D05008 /* ProfileHeaderView.swift in Sources */,
 				BC1D577F2B44F4F500D05008 /* SignUpView.swift in Sources */,
+				BC1D578B2B49430100D05008 /* UploadPostViewModel.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
 				BC1D57812B46497A00D05008 /* User.swift in Sources */,
