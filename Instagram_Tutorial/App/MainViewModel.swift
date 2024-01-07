@@ -22,9 +22,12 @@ final class MainViewModel: ObservableObject {
     }
     
     func subscribeSession() {
-        authService.$userSession.sink { userSession in
-            self.userSession = userSession
-        }
-        .store(in: &cancellables)
+        authService.$userSession
+            .receive(on: DispatchQueue.main)
+            .sink { userSession in
+                print("🚗 MainThread: \(Thread.isMainThread)")
+                self.userSession = userSession
+            }
+            .store(in: &cancellables)
     }
 }
