@@ -18,6 +18,7 @@ struct EnterEmailView: View {
             
         Text("앞으로 로그인할 때 사용하게 될 거예요.")
             .font(.subheadline)
+            .padding(.all)
         
         TextField("이메일 입력", text: $email)
             .textInputAutocapitalization(.none)
@@ -27,10 +28,11 @@ struct EnterEmailView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal, 24)
         
-        Button(action: {
-            print("Login")
-        }, label: {
-            Text("Login")
+        
+        NavigationLink {
+            EnterPasswordView().navigationBarBackButtonHidden()
+        } label: {
+            Text("다음")
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, maxHeight: 44)
@@ -38,8 +40,7 @@ struct EnterEmailView: View {
                 .background(Color(uiColor: .systemBlue))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
-        })
-        .padding(.vertical)
+        }.padding(.vertical)
     }
 }
 

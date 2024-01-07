@@ -61,6 +61,7 @@
 		BC1D57D12B4A94D800D05008 /* EmailPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57D02B4A94D800D05008 /* EmailPasswordTextField.swift */; };
 		BC1D57D52B4A969000D05008 /* EnterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57D42B4A969000D05008 /* EnterPasswordView.swift */; };
 		BC1D57D72B4A96F900D05008 /* EnterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57D62B4A96F900D05008 /* EnterUserNameView.swift */; };
+		BC1D57D92B4A9A3900D05008 /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57D82B4A9A3900D05008 /* CompleteSignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		BC1D57D02B4A94D800D05008 /* EmailPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailPasswordTextField.swift; sourceTree = "<group>"; };
 		BC1D57D42B4A969000D05008 /* EnterPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPasswordView.swift; sourceTree = "<group>"; };
 		BC1D57D62B4A96F900D05008 /* EnterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserNameView.swift; sourceTree = "<group>"; };
+		BC1D57D82B4A9A3900D05008 /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 				BC1D577E2B44F4F500D05008 /* EnterEmailView.swift */,
 				BC1D57D42B4A969000D05008 /* EnterPasswordView.swift */,
 				BC1D57D62B4A96F900D05008 /* EnterUserNameView.swift */,
+				BC1D57D82B4A9A3900D05008 /* CompleteSignUpView.swift */,
 				BC1D57D02B4A94D800D05008 /* EmailPasswordTextField.swift */,
 			);
 			path = View;
@@ -418,6 +421,7 @@
 				BC1D57512B3F065D00D05008 /* MainView.swift in Sources */,
 				BC1D57D72B4A96F900D05008 /* EnterUserNameView.swift in Sources */,
 				BC1D57CF2B4A8F9A00D05008 /* SignupViewModel.swift in Sources */,
+				BC1D57D92B4A9A3900D05008 /* CompleteSignUpView.swift in Sources */,
 				BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
 				BC1D578D2B494A9400D05008 /* Binding+Optional.swift in Sources */,

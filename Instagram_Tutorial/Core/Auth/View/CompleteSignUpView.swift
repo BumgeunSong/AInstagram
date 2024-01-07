@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CompleteSignUpView: View {
     
-    private let userName: String
+    let userName: String
     @Environment(\.dismiss) var dismiss
     
     var body: some View {

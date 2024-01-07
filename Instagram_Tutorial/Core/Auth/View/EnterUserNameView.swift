@@ -29,9 +29,11 @@ struct EnterUserNameView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal, 24)
         
-        Button(action: {
-            print("다음")
-        }, label: {
+        NavigationLink {
+            CompleteSignUpView(
+                userName: userName
+            ).navigationBarBackButtonHidden()
+        } label: {
             Text("다음")
                 .font(.subheadline)
                 .fontWeight(.semibold)
@@ -40,8 +42,7 @@ struct EnterUserNameView: View {
                 .background(Color(uiColor: .systemBlue))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
-        })
-        .padding(.vertical)
+        }.padding(.vertical)
     }
 }
 

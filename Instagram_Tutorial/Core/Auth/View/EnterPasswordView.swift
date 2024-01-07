@@ -28,9 +28,9 @@ struct EnterPasswordView: View {
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding(.horizontal, 24)
         
-        Button(action: {
-            print("Login")
-        }, label: {
+        NavigationLink {
+            EnterUserNameView().navigationBarBackButtonHidden()
+        } label: {
             Text("다음")
                 .font(.subheadline)
                 .fontWeight(.semibold)
@@ -39,8 +39,7 @@ struct EnterPasswordView: View {
                 .background(Color(uiColor: .systemBlue))
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
-        })
-        .padding(.vertical)
+        }.padding(.vertical)
     }
 }
 
