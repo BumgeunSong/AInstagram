@@ -10,7 +10,6 @@ import SwiftUI
 struct CompleteSignUpView: View {
     
     let userName: String
-    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Text("환영합니다, \(userName)님!")
@@ -23,7 +22,7 @@ struct CompleteSignUpView: View {
             .padding(.all)
         
         Button(action: {
-            dismiss()
+            print("시작하기")
         }, label: {
             Text("시작하기")
                 .font(.subheadline)
