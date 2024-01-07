@@ -29,9 +29,7 @@ struct EnterUserNameView: View {
             .padding(.horizontal, 24)
         
         NavigationLink {
-            CompleteSignUpView(
-                userName: userName
-            )
+            CompleteSignUpView()
         } label: {
             Text("다음")
                 .font(.subheadline)

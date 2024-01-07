@@ -45,5 +45,5 @@ struct CompleteSignUpView: View {
 }
 
 #Preview {
-    CompleteSignUpView(userName: "에디쏭")
+    CompleteSignUpView()
 }
