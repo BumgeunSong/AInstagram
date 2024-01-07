@@ -10,12 +10,14 @@ import SwiftUI
 struct UploadPostView: View {
     @State private var prompt: String? = ""
     @StateObject private var viewModel = UploadPostViewModel()
+    @Binding var tabIndex: Int
     
     var body: some View {
         VStack {
             HStack {
                 Button(action: {
                     self.prompt = ""
+                    self.tabIndex = TabIndex.feed
                 }, label: {
                     Image(systemName: "xmark")
                 }).tint(.black)
@@ -68,5 +70,5 @@ struct UploadPostView: View {
 }
 
 #Preview {
-    UploadPostView()
+    UploadPostView(tabIndex: .constant(0))
 }
