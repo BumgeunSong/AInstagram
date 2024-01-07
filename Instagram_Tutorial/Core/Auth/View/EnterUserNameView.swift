@@ -17,7 +17,7 @@ struct EnterUserNameView: View {
             .fontWeight(.bold)
             .padding(.all)
             
-        Text("다른 유저들에게 표시되는 이름이에요. 나중에 얼마든지 바꿀 수 있어요.")
+        Text("다른 유저들에게 표시되는 이름이에요.\n나중에 얼마든지 바꿀 수 있어요.")
             .font(.subheadline)
             .padding(.all)
         
@@ -32,7 +32,7 @@ struct EnterUserNameView: View {
         NavigationLink {
             CompleteSignUpView(
                 userName: userName
-            ).navigationBarBackButtonHidden()
+            )
         } label: {
             Text("다음")
                 .font(.subheadline)
@@ -43,6 +43,8 @@ struct EnterUserNameView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
         }.padding(.vertical)
+        
+        Spacer()
     }
 }
 

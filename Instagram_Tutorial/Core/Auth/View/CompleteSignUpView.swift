@@ -35,6 +35,8 @@ struct CompleteSignUpView: View {
                 .padding(.horizontal, 24)
         })
         .padding(.vertical)
+        
+        Spacer()
     }
 }
 

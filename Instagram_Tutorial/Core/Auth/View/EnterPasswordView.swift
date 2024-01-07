@@ -29,7 +29,7 @@ struct EnterPasswordView: View {
             .padding(.horizontal, 24)
         
         NavigationLink {
-            EnterUserNameView().navigationBarBackButtonHidden()
+            EnterUserNameView()
         } label: {
             Text("다음")
                 .font(.subheadline)
@@ -40,6 +40,8 @@ struct EnterPasswordView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
         }.padding(.vertical)
+        
+        Spacer()
     }
 }
 

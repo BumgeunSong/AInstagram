@@ -30,7 +30,7 @@ struct EnterEmailView: View {
         
         
         NavigationLink {
-            EnterPasswordView().navigationBarBackButtonHidden()
+            EnterPasswordView()
         } label: {
             Text("다음")
                 .font(.subheadline)
@@ -41,6 +41,8 @@ struct EnterEmailView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .padding(.horizontal, 24)
         }.padding(.vertical)
+        
+        Spacer()
     }
 }
 
