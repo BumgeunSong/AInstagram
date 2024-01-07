@@ -20,7 +20,7 @@ struct EnterPasswordView: View {
             .font(.subheadline)
             .padding(.all)
         
-        TextField("비밀번호 입력", text: $viewModel.password)
+        SecureField("비밀번호 입력", text: $viewModel.password)
             .textInputAutocapitalization(.none)
             .font(.subheadline)
             .padding(12)
