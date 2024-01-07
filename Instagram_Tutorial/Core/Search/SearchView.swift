@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State var searchText: String = ""
-    var searchResult: [User] {
-        if searchText.isEmpty { return User.mock }
-        return User.mock.filter { user in
-            user.userName.contains(searchText)
-        }
-    }
+    @StateObject var viewModel = SearchViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 8) {
-                    ForEach(searchResult) { user in
+                    ForEach(viewModel.searchResult) { user in
                         UserSummaryCell(user: user)
                     }
                 }
@@ -28,7 +22,7 @@ struct SearchView: View {
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }.searchable(
-            text: $searchText,
+            text: $viewModel.searchText,
             placement: .toolbar,
             prompt: "다른 유저의 아이디를 검색하세요"
         )
