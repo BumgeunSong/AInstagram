@@ -9,10 +9,10 @@ import SwiftUI
 
 extension Image {
     init(profileURL: String?) {
-        if let profileURL {
+        if let profileURL, profileURL != "person.fill" {
             self = Image(profileURL)
         } else {
-            self = Image(systemName: "person.circle.fill")
+            self = Image(systemName: "person.fill")
         }
     }
 }
