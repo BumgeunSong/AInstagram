@@ -24,8 +24,7 @@ struct MainView: View {
             } else if let currentUser = viewModel.currentUser {
                 MainTabView(currentUser: currentUser)
             } else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
+                ProgressView().progressViewStyle(CircularProgressViewStyle())
             }
         }
     }
