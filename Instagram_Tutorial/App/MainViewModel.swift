@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import Combine
 
+@MainActor
 final class MainViewModel: ObservableObject {
     
     private let authService: AuthService
