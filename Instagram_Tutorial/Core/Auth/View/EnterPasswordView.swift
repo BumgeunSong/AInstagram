@@ -16,7 +16,7 @@ struct EnterPasswordView: View {
             .fontWeight(.bold)
             .padding(.all)
             
-        Text("앞으로 로그인할 때 사용하게 될 거예요.")
+        Text("보안을 위해 비밀번호는 8자리 이상이어야 해요.")
             .font(.subheadline)
             .padding(.all)
         
