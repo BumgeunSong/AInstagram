@@ -12,7 +12,7 @@ struct User: Identifiable, Codable {
     var userName: String = "unknown"
     var fullName: String?
     var bio: String?
-    var profileImageURL: String = "person.fill"
+    var profileImageURL: String?
     let email: String
 }
 

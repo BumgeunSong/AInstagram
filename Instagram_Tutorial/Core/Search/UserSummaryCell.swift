@@ -13,11 +13,12 @@ struct UserSummaryCell: View {
     
     var body: some View {
         HStack {
-            Image(user.profileImageURL ?? "")
+            Image(profileURL: user.profileImageURL)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48, height: 48)
-            .clipShape(Circle())
+                .clipShape(Circle())
+            
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(user.userName)
