@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     
@@ -49,7 +50,19 @@ struct LoginView: View {
                 .padding(.vertical)
                 
                 Divider().padding(.horizontal)
-                Spacer()
+                Button(action: {
+                    print("Sign in with Apple")
+                }, label: {
+                    SignInWithAppleButton(onRequest: {_ in
+                        print("onRequest")
+                    }, onCompletion: {_ in
+                        print("onCompletion")
+                    })
+                    .frame(maxWidth: .infinity, maxHeight: 44)
+                    .padding(.horizontal, 24)
+                    .background(.background)
+                })
+                .padding(.vertical)
                 Divider().padding(.horizontal)
                 NavigationLink {
                     SignUpView()
