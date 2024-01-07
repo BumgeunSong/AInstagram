@@ -15,6 +15,7 @@ final class MainViewModel: ObservableObject {
     private let authService: AuthService
     private var cancellables = Set<AnyCancellable>()
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User? = nil
     
     init(authService: AuthService) {
         self.authService = authService
@@ -28,5 +29,13 @@ final class MainViewModel: ObservableObject {
                 self.userSession = userSession
             }
             .store(in: &cancellables)
+        
+        authService.$currentUser
+            .receive(on: DispatchQueue.main)
+            .sink { userSession in
+                self.currentUser = userSession
+            }
+            .store(in: &cancellables)
+        
     }
 }
