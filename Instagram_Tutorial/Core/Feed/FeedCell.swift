@@ -17,7 +17,7 @@ struct FeedCell: View {
             HStack {
                 Image(profileURL: post.creator.profileImageURL)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
                 

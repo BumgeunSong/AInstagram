@@ -15,7 +15,7 @@ struct UserSummaryCell: View {
         HStack {
             Image(profileURL: user.profileImageURL)
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(width: 48, height: 48)
                 .clipShape(Circle())
             
