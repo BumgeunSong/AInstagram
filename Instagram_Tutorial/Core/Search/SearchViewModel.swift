@@ -20,7 +20,7 @@ final class SearchViewModel: ObservableObject {
             }
             
             let newResult = allResult.filter { user in
-                user.userName.range(of: user.userName, options: .caseInsensitive) != nil
+                user.userName.range(of: searchText, options: .caseInsensitive) != nil
             }
             searchResult = newResult
             
