@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EnterPasswordView: View {
-    @State var password: String = ""
+    @EnvironmentObject var viewModel: SignupViewModel
     
     var body: some View {
         Text("비밀번호를 입력해주세요")
@@ -20,7 +20,7 @@ struct EnterPasswordView: View {
             .font(.subheadline)
             .padding(.all)
         
-        TextField("비밀번호 입력", text: $password)
+        TextField("비밀번호 입력", text: $viewModel.password)
             .textInputAutocapitalization(.none)
             .font(.subheadline)
             .padding(12)

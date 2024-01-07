@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EnterUserNameView: View {
-    
-    @State var userName: String = ""
+    @EnvironmentObject var viewModel: SignupViewModel
     
     var body: some View {
         Text("사용자 이름을 입력해주세요")
@@ -21,7 +20,7 @@ struct EnterUserNameView: View {
             .font(.subheadline)
             .padding(.all)
         
-        TextField("사용자 이름 입력", text: $userName)
+        TextField("사용자 이름 입력", text: $viewModel.userName)
             .textInputAutocapitalization(.none)
             .font(.subheadline)
             .padding(12)

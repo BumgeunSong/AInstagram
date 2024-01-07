@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct CompleteSignUpView: View {
-    
-    let userName: String
+    @EnvironmentObject var viewModel: SignupViewModel
     
     var body: some View {
-        Text("환영합니다, \(userName)님!")
+        Text("환영합니다, \(viewModel.userName)님!")
             .font(.title)
             .fontWeight(.bold)
             .padding(.all)

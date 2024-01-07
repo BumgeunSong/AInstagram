@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EnterEmailView: View {
-    @State var email: String = ""
+    @EnvironmentObject var viewModel: SignupViewModel
     
     var body: some View {
         Text("이메일을 입력해주세요")
@@ -20,7 +20,7 @@ struct EnterEmailView: View {
             .font(.subheadline)
             .padding(.all)
         
-        TextField("이메일 입력", text: $email)
+        TextField("이메일 입력", text: $viewModel.email)
             .textInputAutocapitalization(.none)
             .font(.subheadline)
             .padding(12)
