@@ -8,11 +8,23 @@
 import Foundation
 
 extension String {
+    static let empty: String = ""
+    
     var isEmpty: Bool {
-        self == ""
+        self == .empty
     }
     
     var isNotEmpty: Bool {
-        self != ""
+        self != .empty
+    }
+}
+
+extension Optional where Wrapped == String {
+    var orEmpty: String {
+        if let self {
+            return self
+        } else {
+            return .empty
+        }
     }
 }
