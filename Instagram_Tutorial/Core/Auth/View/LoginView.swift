@@ -9,8 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         NavigationStack {
@@ -25,8 +24,8 @@ struct LoginView: View {
                 
                 // text fields
                 EmailPasswordTextField(
-                    email: $email,
-                    password: $password
+                    email: $viewModel.email,
+                    password: $viewModel.password
                 )
                 
                 Button(action: {
@@ -41,9 +40,7 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Button(action: {
-                    Task {
-                        try await AuthService.shared.login(withEmail: email, password: password)
-                    }
+                    Task { try await viewModel.login() }
                 }, label: {
                     Text("Login")
                         .font(.subheadline)
