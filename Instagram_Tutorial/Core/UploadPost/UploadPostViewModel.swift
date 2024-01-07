@@ -10,7 +10,6 @@ import Foundation
 @MainActor
 class UploadPostViewModel: ObservableObject {
     
-    @Published var selectedPrompt: String?
     @Published var recentPrompts: [String] = []
     
     func loadRecentPrompts() async {

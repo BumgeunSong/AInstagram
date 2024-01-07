@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct UploadPostView: View {
-    @State private var prompt: String = ""
+    @State private var prompt: String? = ""
     @StateObject private var viewModel = UploadPostViewModel()
-    @State private var selectedPrompt: String? = ""
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: {}, label: {
+                Button(action: {
+                    self.prompt = ""
+                }, label: {
                     Image(systemName: "xmark")
                 }).tint(.black)
                 
@@ -34,7 +35,7 @@ struct UploadPostView: View {
             
             TextField(
                 "프롬프트를 입력하세요",
-                text: Binding($selectedPrompt, replacingNilWith: ""),
+                text: Binding($prompt, replacingNilWith: ""),
                 axis: .vertical
             )
             .frame(minHeight: 200)
@@ -55,7 +56,7 @@ struct UploadPostView: View {
                 List(
                     viewModel.recentPrompts,
                     id: \.self,
-                    selection: $selectedPrompt
+                    selection: $prompt
                 ) { prompt in
                     Text(prompt)
                 }.listStyle(.plain)
