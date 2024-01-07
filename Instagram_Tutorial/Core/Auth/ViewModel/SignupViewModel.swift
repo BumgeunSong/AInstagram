@@ -20,5 +20,12 @@ class SignupViewModel: ObservableObject {
     
     func createUser() async throws {
         try await authService.createUser(email: email, password: password, userName: userName)
+        reset()
+    }
+    
+    private func reset() {
+        userName = ""
+        password = ""
+        email = ""
     }
 }
