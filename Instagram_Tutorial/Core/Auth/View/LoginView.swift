@@ -49,7 +49,8 @@ struct LoginView: View {
                 })
                 .padding(.vertical)
                 
-                Divider().padding(.horizontal)
+                Text("or").font(.footnote)
+                
                 Button(action: {
                     print("Sign in with Apple")
                 }, label: {
@@ -63,6 +64,9 @@ struct LoginView: View {
                     .background(.background)
                 })
                 .padding(.vertical)
+                
+                Spacer()
+                
                 Divider().padding(.horizontal)
                 NavigationLink {
                     EnterEmailView()
