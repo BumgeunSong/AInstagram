@@ -15,9 +15,9 @@ struct ProfileHeaderView: View {
         VStack(spacing: 10) {
             /// pic and stats
             HStack {
-                Image(.eddyDesc)
+                Image(profileURL: user.profileImageURL)
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
                 Spacer()
@@ -27,15 +27,18 @@ struct ProfileHeaderView: View {
                     UserStatView(title: "Following", value: 30)
                 }
                 .padding(16)
-            }
+            }.padding(.horizontal)
             
             
             // name and bio
             VStack(alignment: .leading, spacing: 4) {
-                Text("Bumgeun Song")
+                Text(user.userName)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text("love writing / programming")
+                Text(user.fullName.orEmpty)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                Text(user.bio.orEmpty)
                     .font(.footnote)
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
