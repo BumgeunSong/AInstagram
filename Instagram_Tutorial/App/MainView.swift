@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @StateObject private var viewModel = MainViewModel(
+        authService: AuthService()
+    )
+    
     var body: some View {
-        MainTabView()
+        Group {
+            if viewModel.userSession == nil {
+                LoginView()
+            } else {
+                MainTabView()
+            }
+        }
     }
 }
 

@@ -56,6 +56,7 @@
 		BC1D57C42B4A741700D05008 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC1D57C32B4A741700D05008 /* FirebaseStorage */; };
 		BC1D57C62B4A741700D05008 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BC1D57C52B4A741700D05008 /* FirebaseStorageCombine-Community */; };
 		BC1D57C82B4A764F00D05008 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57C72B4A764F00D05008 /* AuthService.swift */; };
+		BC1D57CC2B4A89ED00D05008 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57CB2B4A89ED00D05008 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		BC1D578C2B494A9400D05008 /* Binding+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optional.swift"; sourceTree = "<group>"; };
 		BC1D578E2B4A736700D05008 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BC1D57C72B4A764F00D05008 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BC1D57CB2B4A89ED00D05008 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				BC1D574E2B3F065D00D05008 /* Instagram_TutorialApp.swift */,
 				BC1D57502B3F065D00D05008 /* MainView.swift */,
+				BC1D57CB2B4A89ED00D05008 /* MainViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				BC1D578B2B49430100D05008 /* UploadPostViewModel.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
+				BC1D57CC2B4A89ED00D05008 /* MainViewModel.swift in Sources */,
 				BC1D57812B46497A00D05008 /* User.swift in Sources */,
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
 				BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */,
