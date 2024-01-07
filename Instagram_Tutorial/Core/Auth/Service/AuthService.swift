@@ -12,11 +12,14 @@ import FirebaseFirestore
 class AuthService {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     static let shared = AuthService()
     
+    private let userDB = Firestore.firestore().collection("users")
+    
     private init() {
-        self.userSession = Auth.auth().currentUser
+        Task { try await loadUserData() }
     }
     
     func login(withEmail email: String, password: String) async throws {
@@ -39,7 +42,10 @@ class AuthService {
     }
     
     func loadUserData() async throws {
-        
+        self.userSession = Auth.auth().currentUser
+        guard let currentUID = userSession?.uid else { return }
+        guard let document = try? await userDB.document(currentUID).getDocument() else { return }
+        self.currentUser = try? document.data(as: User.self)
     }
     
     func signout() async throws {
@@ -54,6 +60,6 @@ class AuthService {
     private func uploadUserInfo(uid: String, email: String, username: String) async {
         let user = User(id: uid, userName: username, email: email)
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
-        try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
+        try? await userDB.document(user.id).setData(encodedUser)
     }
 }
