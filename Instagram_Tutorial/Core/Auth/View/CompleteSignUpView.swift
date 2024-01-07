@@ -21,7 +21,13 @@ struct CompleteSignUpView: View {
             .padding(.all)
         
         Button(action: {
-            print("시작하기")
+            Task {
+                do {
+                    try await viewModel.createUser()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
         }, label: {
             Text("시작하기")
                 .font(.subheadline)
