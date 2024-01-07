@@ -32,8 +32,8 @@ final class MainViewModel: ObservableObject {
         
         authService.$currentUser
             .receive(on: DispatchQueue.main)
-            .sink { userSession in
-                self.currentUser = userSession
+            .sink { currentUser in
+                self.currentUser = currentUser
             }
             .store(in: &cancellables)
         
