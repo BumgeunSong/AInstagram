@@ -13,7 +13,7 @@ struct UserSummaryCell: View {
     
     var body: some View {
         HStack {
-            Image(user.profileImageURL)
+            Image(user.profileImageURL ?? "")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 48, height: 48)
