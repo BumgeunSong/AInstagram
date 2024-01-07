@@ -12,7 +12,9 @@ class AuthService {
     
     @Published var userSession: FirebaseAuth.User?
     
-    init() {
+    static let shared = AuthService()
+    
+    private init() {
         self.userSession = Auth.auth().currentUser
     }
     

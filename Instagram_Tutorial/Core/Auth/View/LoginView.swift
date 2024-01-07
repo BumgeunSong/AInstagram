@@ -70,6 +70,7 @@ struct LoginView: View {
                 Divider().padding(.horizontal)
                 NavigationLink {
                     EnterEmailView()
+                        
                 } label: {
                     HStack(spacing: 4) {
                         Text("Don't have an account?")
