@@ -36,6 +36,11 @@ class AuthService {
     }
     
     func signout() async throws {
-        
+        do {
+            try Auth.auth().signOut()
+            userSession = nil
+        } catch {
+            print("로그아웃 에러: \(error.localizedDescription)")
+        }
     }
 }
