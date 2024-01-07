@@ -25,7 +25,6 @@ final class MainViewModel: ObservableObject {
         authService.$userSession
             .receive(on: DispatchQueue.main)
             .sink { userSession in
-                print("🚗 MainThread: \(Thread.isMainThread)")
                 self.userSession = userSession
             }
             .store(in: &cancellables)

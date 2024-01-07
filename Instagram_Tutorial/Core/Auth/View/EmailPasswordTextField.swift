@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct EmailPasswordTextField: View {
-    @State private var email = ""
-    @State private var password = ""
+    @Binding var email: String
+    @Binding var password: String
     
     var body: some View {
         VStack {

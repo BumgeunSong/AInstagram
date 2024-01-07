@@ -9,6 +9,8 @@ import SwiftUI
 import AuthenticationServices
 
 struct LoginView: View {
+    @State private var email = ""
+    @State private var password = ""
     
     var body: some View {
         NavigationStack {
@@ -22,7 +24,10 @@ struct LoginView: View {
                     .frame(width: 220, height: 110)
                 
                 // text fields
-                EmailPasswordTextField()
+                EmailPasswordTextField(
+                    email: $email,
+                    password: $password
+                )
                 
                 Button(action: {
                     print("Forgot Password")
@@ -36,7 +41,9 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Button(action: {
-                    print("Login")
+                    Task {
+                        try await AuthService.shared.login(withEmail: email, password: password)
+                    }
                 }, label: {
                     Text("Login")
                         .font(.subheadline)
