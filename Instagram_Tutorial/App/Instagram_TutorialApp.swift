@@ -24,7 +24,7 @@ struct Instagram_TutorialApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainView()
         }
     }
 }
