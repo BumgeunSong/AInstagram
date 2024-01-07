@@ -34,8 +34,8 @@ class AuthService {
     func createUser(email: String, password: String, userName: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.userSession = result.user
             await uploadUserInfo(uid: result.user.uid, email: email, username: userName)
+            try await loadUserData()
         } catch {
             print("회원가입 에러: \(error.localizedDescription)")
         }
