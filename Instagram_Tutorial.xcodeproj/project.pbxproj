@@ -66,6 +66,8 @@
 		BC1D57DD2B4AD71300D05008 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57DC2B4AD71300D05008 /* SearchViewModel.swift */; };
 		BC1D57DF2B4AE0FC00D05008 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57DE2B4AE0FC00D05008 /* ProfileImage.swift */; };
 		BC1D57E12B4AE36B00D05008 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E02B4AE36B00D05008 /* String+Util.swift */; };
+		BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */; };
+		BC1D57E52B4B938D00D05008 /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		BC1D57DC2B4AD71300D05008 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		BC1D57DE2B4AE0FC00D05008 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		BC1D57E02B4AE36B00D05008 /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +249,8 @@
 			children = (
 				BC1D576D2B3F090800D05008 /* ProfileView.swift */,
 				BC1D57862B48382800D05008 /* ProfileHeaderView.swift */,
+				BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */,
+				BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				BC1D57C82B4A764F00D05008 /* AuthService.swift in Sources */,
 				BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */,
 				BC1D57832B482C5800D05008 /* Post.swift in Sources */,
+				BC1D57E52B4B938D00D05008 /* ProfileEditViewModel.swift in Sources */,
 				BC1D57772B425F8600D05008 /* SearchView.swift in Sources */,
 				BC1D57872B48382800D05008 /* ProfileHeaderView.swift in Sources */,
 				BC1D577F2B44F4F500D05008 /* EnterEmailView.swift in Sources */,
@@ -450,6 +457,7 @@
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
 				BC1D57CC2B4A89ED00D05008 /* MainViewModel.swift in Sources */,
+				BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */,
 				BC1D57812B46497A00D05008 /* User.swift in Sources */,
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
 				BC1D57D12B4A94D800D05008 /* EmailPasswordTextField.swift in Sources */,
