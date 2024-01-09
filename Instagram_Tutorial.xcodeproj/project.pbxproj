@@ -68,6 +68,7 @@
 		BC1D57E12B4AE36B00D05008 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E02B4AE36B00D05008 /* String+Util.swift */; };
 		BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */; };
 		BC1D57E52B4B938D00D05008 /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */; };
+		BC1D57E72B4D7B7200D05008 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E62B4D7B7200D05008 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		BC1D57E02B4AE36B00D05008 /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		BC1D57E62B4D7B7200D05008 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		BC1D575C2B3F066B00D05008 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BC1D57E62B4D7B7200D05008 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
 				BC1D57D12B4A94D800D05008 /* EmailPasswordTextField.swift in Sources */,
 				BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */,
+				BC1D57E72B4D7B7200D05008 /* UserService.swift in Sources */,
 				BC1D57DD2B4AD71300D05008 /* SearchViewModel.swift in Sources */,
 				BC1D576A2B3F07D800D05008 /* MainTabView.swift in Sources */,
 				BC1D57D52B4A969000D05008 /* EnterPasswordView.swift in Sources */,

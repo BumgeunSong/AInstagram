@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 @MainActor
 final class SearchViewModel: ObservableObject {
@@ -23,37 +22,14 @@ final class SearchViewModel: ObservableObject {
                 user.userName.range(of: searchText, options: .caseInsensitive) != nil
             }
             searchResult = newResult
-            
         }
     }
-    
-    private let userDB = Firestore.firestore().collection("users")
     
     init() {
-        Task { await loadUsers() }
+        Task { try await loadUsers() }
     }
     
-    func loadUsers() async {
-        guard let query = try? await userDB.getDocuments() else { return }
-        
-        let results = query.documents.compactMap { documents in
-            try? documents.data(as: User.self)
-        }
-        
-        allResult = results
-        searchResult = results
-    }
-    
-    func search(_ searchText: String) async {
-        guard let querySnapshot = try? await userDB
-                .whereField("username", isEqualTo: searchText)
-                .whereField("bio", isEqualTo: searchText)
-                .getDocuments() else { return }
-        
-        let results = querySnapshot.documents.compactMap { documents in
-            try? documents.data(as: User.self)
-        }
-        
-        searchResult = results
+    func loadUsers() async throws {
+        self.allResult = try await UserService().fetchAllUsers()
     }
 }
