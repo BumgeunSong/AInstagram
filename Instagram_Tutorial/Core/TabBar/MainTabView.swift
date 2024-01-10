@@ -16,7 +16,7 @@ struct MainTabView: View {
             FeedView()
                 .tabItem { Image(systemName: "house") }
                 .tag(TabIndex.feed)
-            SearchView()
+            SearchView(tabIndex: $selectedIndex)
                 .tabItem { Image(systemName: "magnifyingglass") }
                 .tag(TabIndex.search)
             UploadPostView(tabIndex: $selectedIndex)

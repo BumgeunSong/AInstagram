@@ -10,13 +10,14 @@ import SwiftUI
 struct SearchView: View {
     @StateObject var viewModel = SearchViewModel()
     @State var searchText: String = ""
+    @Binding var tabIndex: Int
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 8) {
                     ForEach(viewModel.allUsers) { user in
-                        UserSummaryCell(user: user)
+                        UserSummaryCell(user: user, tabIndex: $tabIndex)
                     }
                 }
             }
@@ -31,12 +32,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView()
-}
-
-struct UserData: Identifiable {
-    let id: UUID = UUID()
-    let username: String
-    let description: String
-    let profilePicture: ImageResource
+    SearchView(tabIndex: .constant(TabIndex.search))
 }

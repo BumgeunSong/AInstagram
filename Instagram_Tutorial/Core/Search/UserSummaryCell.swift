@@ -10,29 +10,34 @@ import SwiftUI
 struct UserSummaryCell: View {
     
     let user: User
+    @Binding var tabIndex: Int
     
     var body: some View {
-        HStack {
-            Image(profileURL: user.profileImageURL)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 48, height: 48)
-                .clipShape(Circle())
-            
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(user.userName)
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                Text(user.bio ?? "")
-                    .font(.footnote)
+        Button(action: {
+            tabIndex = TabIndex.profile
+        }, label: {
+            HStack {
+                Image(profileURL: user.profileImageURL)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 48, height: 48)
+                    .clipShape(Circle())
+                
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(user.userName)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    Text(user.bio ?? "")
+                        .font(.footnote)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
             }
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
-        }
-        .padding(.horizontal)
+            .padding(.horizontal)
+        })
     }
 }
 
 #Preview {
-    UserSummaryCell(user: .mock[0])
+    UserSummaryCell(user: .mock[0], tabIndex: .constant(TabIndex.search))
 }
