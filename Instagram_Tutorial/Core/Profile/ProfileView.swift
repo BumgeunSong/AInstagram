@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
-    let user: User
+
     let posts: [Post] = Post.mock
     
+    @Binding var userToShowProfile: User
     @State var isSignoutAlertPresented: Bool = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                ProfileHeaderView(user: user)
-                UserPostGridView(user: user, posts: posts)
+                ProfileHeaderView(user: userToShowProfile)
+                UserPostGridView(user: userToShowProfile, posts: posts)
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
@@ -49,5 +49,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(user: .mock[0])
+    ProfileView(userToShowProfile: .constant(.mock[0]))
 }

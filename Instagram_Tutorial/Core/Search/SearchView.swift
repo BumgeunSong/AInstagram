@@ -11,13 +11,14 @@ struct SearchView: View {
     @StateObject var viewModel = SearchViewModel()
     @State var searchText: String = ""
     @Binding var tabIndex: Int
+    @Binding var userToShowProfile: User
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 8) {
                     ForEach(viewModel.allUsers) { user in
-                        UserSummaryCell(user: user, tabIndex: $tabIndex)
+                        UserSummaryCell(user: user, tabIndex: $tabIndex, userToShowprofile: $userToShowProfile)
                     }
                 }
             }
@@ -32,5 +33,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(tabIndex: .constant(TabIndex.search))
+    SearchView(tabIndex: .constant(TabIndex.search), userToShowProfile: .constant(.mock[0]))
 }

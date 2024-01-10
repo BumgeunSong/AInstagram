@@ -11,10 +11,12 @@ struct UserSummaryCell: View {
     
     let user: User
     @Binding var tabIndex: Int
+    @Binding var userToShowprofile: User
     
     var body: some View {
         Button(action: {
             tabIndex = TabIndex.profile
+            userToShowprofile = user
         }, label: {
             HStack {
                 Image(profileURL: user.profileImageURL)
@@ -39,5 +41,5 @@ struct UserSummaryCell: View {
 }
 
 #Preview {
-    UserSummaryCell(user: .mock[0], tabIndex: .constant(TabIndex.search))
+    UserSummaryCell(user: .mock[0], tabIndex: .constant(TabIndex.search), userToShowprofile: .constant(.mock[0]))
 }

@@ -22,7 +22,7 @@ struct MainView: View {
             if viewModel.userSession == nil {
                 LoginView().environmentObject(signupViewModel)
             } else if let currentUser = viewModel.currentUser {
-                MainTabView(currentUser: currentUser)
+                MainTabView(currentUser: currentUser, userToShowProfile: currentUser)
             } else {
                 ProgressView().progressViewStyle(CircularProgressViewStyle())
             }

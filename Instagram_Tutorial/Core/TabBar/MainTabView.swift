@@ -10,13 +10,14 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedIndex: Int = 0
     let currentUser: User
+    @State var userToShowProfile: User
     
     var body: some View {
         TabView(selection: $selectedIndex) {
             FeedView()
                 .tabItem { Image(systemName: "house") }
                 .tag(TabIndex.feed)
-            SearchView(tabIndex: $selectedIndex)
+            SearchView(tabIndex: $selectedIndex, userToShowProfile: $userToShowProfile)
                 .tabItem { Image(systemName: "magnifyingglass") }
                 .tag(TabIndex.search)
             UploadPostView(tabIndex: $selectedIndex)
@@ -25,7 +26,7 @@ struct MainTabView: View {
             Text("Notifications")
                 .tabItem { Image(systemName: "heart") }
                 .tag(TabIndex.notifications)
-            ProfileView(user: currentUser)
+            ProfileView(userToShowProfile: $userToShowProfile)
                 .tabItem { Image(systemName: "person") }
                 .tag(TabIndex.profile)
         }
@@ -42,5 +43,5 @@ enum TabIndex {
 }
 
 #Preview {
-    MainTabView(currentUser: .mock[0])
+    MainTabView(currentUser: .mock[0], userToShowProfile: .mock[0])
 }
