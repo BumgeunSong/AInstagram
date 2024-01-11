@@ -69,6 +69,8 @@
 		BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */; };
 		BC1D57E52B4B938D00D05008 /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */; };
 		BC1D57E72B4D7B7200D05008 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1D57E62B4D7B7200D05008 /* UserService.swift */; };
+		BC88D6DB2B4FFF4D0051751A /* EditProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */; };
+		BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
 		BC1D57E62B4D7B7200D05008 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileButton.swift; sourceTree = "<group>"; };
+		BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,8 @@
 			children = (
 				BC1D576D2B3F090800D05008 /* ProfileView.swift */,
 				BC1D57862B48382800D05008 /* ProfileHeaderView.swift */,
+				BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */,
+				BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */,
 				BC1D57E22B4B930E00D05008 /* ProfileEditView.swift */,
 				BC1D57E42B4B938D00D05008 /* ProfileEditViewModel.swift */,
 			);
@@ -440,10 +446,12 @@
 				BC1D57752B41551800D05008 /* FeedCell.swift in Sources */,
 				BC1D576E2B3F090800D05008 /* ProfileView.swift in Sources */,
 				BC1D57512B3F065D00D05008 /* MainView.swift in Sources */,
+				BC88D6DB2B4FFF4D0051751A /* EditProfileButton.swift in Sources */,
 				BC1D57D72B4A96F900D05008 /* EnterUserNameView.swift in Sources */,
 				BC1D57CF2B4A8F9A00D05008 /* SignupViewModel.swift in Sources */,
 				BC1D57D92B4A9A3900D05008 /* CompleteSignUpView.swift in Sources */,
 				BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */,
+				BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */,
 				BC1D57E12B4AE36B00D05008 /* String+Util.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
 				BC1D57DB2B4AC93100D05008 /* LoginViewModel.swift in Sources */,
