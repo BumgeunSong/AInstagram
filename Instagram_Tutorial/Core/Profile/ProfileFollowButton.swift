@@ -13,8 +13,8 @@ struct ProfileFollowButton: View {
             .font(.subheadline)
             .fontWeight(.semibold)
             .frame(width: 360, height: 32)
-            .background(.white)
-            .foregroundStyle(.black)
+            .background(Color(.systemBlue))
+            .foregroundStyle(.white)
             .overlay(alignment: .center) {
                 RoundedRectangle(
                     cornerSize: CGSize(width: 6, height: 6),

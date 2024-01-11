@@ -47,7 +47,6 @@ struct ProfileHeaderView: View {
             // action button
             
             Button(action: {
-                
             }, label: {
                 if user.isCurrentUser {
                     EditProfileButton()

@@ -13,9 +13,8 @@ struct EditProfileButton: View {
             .font(.subheadline)
             .fontWeight(.semibold)
             .frame(width: 360, height: 32)
-            .background(Color(.systemBlue))
-            
-            .foregroundStyle(.white)
+            .background(.white)
+            .foregroundStyle(.black)
             .overlay(alignment: .center) {
                 RoundedRectangle(
                     cornerSize: CGSize(width: 6, height: 6),
