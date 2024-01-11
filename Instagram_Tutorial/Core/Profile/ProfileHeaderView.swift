@@ -49,7 +49,11 @@ struct ProfileHeaderView: View {
             Button(action: {
                 
             }, label: {
-                EditProfileButton()
+                if user.isCurrentUser {
+                    EditProfileButton()
+                } else {
+                    ProfileFollowButton()
+                }
             })
             
             Divider()
