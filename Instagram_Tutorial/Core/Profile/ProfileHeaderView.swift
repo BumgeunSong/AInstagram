@@ -45,23 +45,11 @@ struct ProfileHeaderView: View {
             .padding(.horizontal)
             
             // action button
+            
             Button(action: {
                 
             }, label: {
-                Text("Edit Profile")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .frame(width: 360, height: 32)
-                    .foregroundStyle(.black)
-                    .overlay(alignment: .center) {
-                        RoundedRectangle(
-                            cornerSize: CGSize(
-                                width: 6,
-                                height: 6
-                            ),
-                            style: .circular
-                        ).stroke(.gray)
-                    }
+                EditProfileButton()
             })
             
             Divider()
