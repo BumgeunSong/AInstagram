@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileHeaderView: View {
     
     let user: User
+    @State var showEditProfile: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -17,9 +18,10 @@ struct ProfileHeaderView: View {
             HStack {
                 Image(profileURL: user.profileImageURL)
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 80, height: 80)
+                    .scaledToFill()
+                    .frame(width: 64, height: 64)
                     .clipShape(Circle())
+                    .background(.gray)
                 Spacer()
                 HStack(spacing: 16) {
                     UserStatView(title: "Posts", value: 3)
@@ -28,7 +30,6 @@ struct ProfileHeaderView: View {
                 }
                 .padding(16)
             }.padding(.horizontal)
-            
             
             // name and bio
             VStack(alignment: .leading, spacing: 4) {
@@ -47,6 +48,7 @@ struct ProfileHeaderView: View {
             // action button
             
             Button(action: {
+                showEditProfile.toggle()
             }, label: {
                 if user.isCurrentUser {
                     EditProfileButton()
@@ -54,9 +56,17 @@ struct ProfileHeaderView: View {
                     ProfileFollowButton()
                 }
             })
+
             
             Divider()
         }
+        .fullScreenCover(
+            isPresented: $showEditProfile,
+            onDismiss: {
+                
+            }, content: {
+                Text("Edit profile View")
+            })
     }
 }
 
