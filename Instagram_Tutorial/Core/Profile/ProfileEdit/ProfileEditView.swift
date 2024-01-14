@@ -31,6 +31,7 @@ struct ProfileEditView: View {
                     Spacer()
                     
                     Button(action: {
+                        Task { try await viewModel.updateUserData() }
                         dismiss()
                     }, label: {
                         Text("Done")
