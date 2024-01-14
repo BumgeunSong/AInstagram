@@ -29,6 +29,13 @@ struct ImageGenerator {
             let base64ImageData = result.data[0].image
             return try openAI.decodeBase64Image(base64ImageData)
         } catch {
+            if let openAIError = error as? OpenAIErrorResponse {
+                print("==================")
+                print("code: \(String(describing: openAIError.error.code))")
+                print("message: \(openAIError.error.message)")
+                print("message: \(openAIError.error.localizedDescription)")
+                print("==================")
+            }
             print("Failed to generate image: \(error.localizedDescription)")
             return nil
         }
