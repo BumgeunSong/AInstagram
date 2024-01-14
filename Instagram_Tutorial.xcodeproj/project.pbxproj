@@ -75,6 +75,7 @@
 		BC88D6E42B53D3680051751A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E32B53D3680051751A /* ImageUploader.swift */; };
 		BC88D6E82B53D7700051751A /* Collection+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E72B53D7700051751A /* Collection+Util.swift */; };
 		BC88D6EB2B53E0240051751A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC88D6EA2B53E0240051751A /* Kingfisher */; };
+		BC88D6ED2B53E09E0051751A /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		BC88D6E02B53C2280051751A /* ProfileEditTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditTextField.swift; sourceTree = "<group>"; };
 		BC88D6E32B53D3680051751A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		BC88D6E72B53D7700051751A /* Collection+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Util.swift"; sourceTree = "<group>"; };
+		BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				BC1D57DE2B4AE0FC00D05008 /* ProfileImage.swift */,
 				BC1D57E02B4AE36B00D05008 /* String+Util.swift */,
 				BC88D6E72B53D7700051751A /* Collection+Util.swift */,
+				BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
 				BC1D57DB2B4AC93100D05008 /* LoginViewModel.swift in Sources */,
 				BC1D57DF2B4AE0FC00D05008 /* ProfileImage.swift in Sources */,
+				BC88D6ED2B53E09E0051751A /* CircularProfileImageView.swift in Sources */,
 				BC1D578D2B494A9400D05008 /* Binding+Optional.swift in Sources */,
 				BC1D57C82B4A764F00D05008 /* AuthService.swift in Sources */,
 				BC1D57892B493F7C00D05008 /* UploadPostView.swift in Sources */,
