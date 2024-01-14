@@ -79,6 +79,8 @@ struct ProfileEditView: View {
             placeholder: viewModel.bio,
             text: $viewModel.bio
         )
+        
+        Spacer()
     }
 }
 
