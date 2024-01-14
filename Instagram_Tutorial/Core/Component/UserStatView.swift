@@ -19,7 +19,7 @@ struct UserStatView: View {
             Text(title)
                 .font(.footnote)
         }
-        .frame(width: 80)
+        .frame(minWidth: 64, alignment: .center)
     }
 }
 
