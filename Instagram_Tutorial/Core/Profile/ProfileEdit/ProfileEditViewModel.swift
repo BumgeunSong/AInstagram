@@ -20,6 +20,8 @@ final class ProfileEditViewModel: ObservableObject {
     @Published var bio: String
     private var user: User
     
+    private var profileUIImage: UIImage?
+    
     init(user: User) {
         self.user = user
         self.selectedImage = nil
@@ -32,10 +34,19 @@ final class ProfileEditViewModel: ObservableObject {
         guard let item else { return }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
         guard let uiImage = UIImage(data: data) else { return }
+        self.profileUIImage = uiImage
         self.profileImage = Image(uiImage: uiImage)
     }
     
     func updateUserData() async throws {
+        
+        var dataToUpdate = [String: Any]()
+        
+        if let profileUIImage {
+            let imageURL = try await ImageUploader.uploadImage(image: profileUIImage)
+            dataToUpdate["profileImageURL"] = imageURL
+        }
+        
         let updatedUser = User(id: user.id, userName: username, fullName: fullname, bio: bio, profileImageURL: nil, email: user.email)
         try await AuthService.shared.updateUser(user: updatedUser)
     }
