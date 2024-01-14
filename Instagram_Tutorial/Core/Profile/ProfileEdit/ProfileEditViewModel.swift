@@ -11,21 +11,20 @@ import Firebase
 
 @MainActor
 final class ProfileEditViewModel: ObservableObject {
-    @Published var selectedImage: PhotosPickerItem? {
-        didSet { Task { await loadImage(fromItem: selectedImage) }}
+    @Published var selectedItem: PhotosPickerItem? {
+        didSet { Task { await loadImage(fromItem: selectedItem) }}
     }
-    @Published var profileImage: Image?
     @Published var username: String
     @Published var fullname: String
     @Published var bio: String
     @Published var isLoading: Bool = false
     @Published var user: User
     
-    private var profileUIImage: UIImage?
+    @Published var selectedImage: UIImage?
     
     init(user: User) {
         self.user = user
-        self.selectedImage = nil
+        self.selectedItem = nil
         self.username = user.userName
         self.fullname = user.fullName.orEmpty
         self.bio = user.bio.orEmpty
@@ -35,16 +34,15 @@ final class ProfileEditViewModel: ObservableObject {
         guard let item else { return }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
         guard let uiImage = UIImage(data: data) else { return }
-        self.profileUIImage = uiImage
-        self.profileImage = Image(uiImage: uiImage)
+        self.selectedImage = uiImage
     }
     
     func updateUserData() async throws {
         isLoading = true
         var dataToUpdate = [String: String]()
         
-        if let profileUIImage {
-            let imageURL = try await ImageUploader.uploadImage(image: profileUIImage)
+        if let selectedImage {
+            let imageURL = try await ImageUploader.uploadImage(image: selectedImage)
             dataToUpdate["profileImageURL"] = imageURL
         }
         

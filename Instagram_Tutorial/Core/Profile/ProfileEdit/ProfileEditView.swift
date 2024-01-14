@@ -54,9 +54,18 @@ struct ProfileEditView: View {
             }
             VStack {
                 // Profile
-                PhotosPicker(selection: $viewModel.selectedImage) {
+                PhotosPicker(selection: $viewModel.selectedItem) {
                     VStack {
-                        CircularProfileImageView(user: viewModel.user, size: 80)
+                        if let selectedImage = viewModel.selectedImage {
+                            Image(uiImage: selectedImage)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                        } else {
+                            CircularProfileImageView(user: viewModel.user, size: 80)
+                        }
+                        
                         Text("Edit Profile Picture")
                             .font(.footnote)
                             .fontWeight(.semibold)
