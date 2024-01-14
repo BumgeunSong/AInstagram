@@ -22,6 +22,11 @@ struct SearchView: View {
                     }
                 }
             }
+            .refreshable {
+                Task {
+                    try await viewModel.loadUsers()
+                }
+            }
             .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
         }.searchable(
