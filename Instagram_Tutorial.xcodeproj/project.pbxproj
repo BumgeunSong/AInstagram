@@ -72,6 +72,7 @@
 		BC88D6DB2B4FFF4D0051751A /* EditProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */; };
 		BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */; };
 		BC88D6DF2B524DBC0051751A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DE2B524DBC0051751A /* EditProfileView.swift */; };
+		BC88D6E12B53C2280051751A /* EditProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E02B53C2280051751A /* EditProfileTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileButton.swift; sourceTree = "<group>"; };
 		BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowButton.swift; sourceTree = "<group>"; };
 		BC88D6DE2B524DBC0051751A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		BC88D6E02B53C2280051751A /* EditProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				BC1D576D2B3F090800D05008 /* ProfileView.swift */,
 				BC88D6DE2B524DBC0051751A /* EditProfileView.swift */,
+				BC88D6E02B53C2280051751A /* EditProfileTextField.swift */,
 				BC1D57862B48382800D05008 /* ProfileHeaderView.swift */,
 				BC88D6DA2B4FFF4D0051751A /* EditProfileButton.swift */,
 				BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */,
@@ -471,6 +474,7 @@
 				BC1D578B2B49430100D05008 /* UploadPostViewModel.swift in Sources */,
 				BC1D57712B4046F700D05008 /* UserStatView.swift in Sources */,
 				BC1D577B2B4263C000D05008 /* UserSummaryCell.swift in Sources */,
+				BC88D6E12B53C2280051751A /* EditProfileTextField.swift in Sources */,
 				BC1D57CC2B4A89ED00D05008 /* MainViewModel.swift in Sources */,
 				BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */,
 				BC1D57812B46497A00D05008 /* User.swift in Sources */,
