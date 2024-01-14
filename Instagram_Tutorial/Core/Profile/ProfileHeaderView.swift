@@ -21,7 +21,6 @@ struct ProfileHeaderView: View {
                     .scaledToFill()
                     .frame(width: 64, height: 64)
                     .clipShape(Circle())
-                    .background(.gray)
                 Spacer()
                 HStack(spacing: 16) {
                     UserStatView(title: "Posts", value: 3)
