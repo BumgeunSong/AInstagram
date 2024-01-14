@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditProfileTextField: View {
+struct ProfileEditTextField: View {
     let title: String
     let placeholder: String
     @Binding var text: String
@@ -30,5 +30,5 @@ struct EditProfileTextField: View {
 }
 
 #Preview {
-    EditProfileTextField(title: "name", placeholder: "eddy", text: .constant(""))
+    ProfileEditTextField(title: "name", placeholder: "eddy", text: .constant(""))
 }

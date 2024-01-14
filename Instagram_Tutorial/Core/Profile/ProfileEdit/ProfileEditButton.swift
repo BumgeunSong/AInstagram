@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditProfileButton: View {
+struct ProfileEditButton: View {
     var body: some View {
         Text("Edit Profile")
             .font(.subheadline)
@@ -25,5 +25,5 @@ struct EditProfileButton: View {
 }
 
 #Preview {
-    EditProfileButton()
+    ProfileEditButton()
 }

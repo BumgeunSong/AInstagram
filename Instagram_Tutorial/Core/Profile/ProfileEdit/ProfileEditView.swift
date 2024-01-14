@@ -62,17 +62,17 @@ struct ProfileEditView: View {
         
         Divider()
         
-        EditProfileTextField(
+        ProfileEditTextField(
             title: "username",
             placeholder: viewModel.username,
             text: $viewModel.username
         )
-        EditProfileTextField(
+        ProfileEditTextField(
             title: "fullname",
             placeholder: viewModel.fullname,
             text: $viewModel.fullname
         )
-        EditProfileTextField(
+        ProfileEditTextField(
             title: "bio",
             placeholder: viewModel.bio,
             text: $viewModel.bio

@@ -51,7 +51,7 @@ struct ProfileHeaderView: View {
                 showEditProfile.toggle()
             }, label: {
                 if user.isCurrentUser {
-                    EditProfileButton()
+                    ProfileEditButton()
                 } else {
                     ProfileFollowButton()
                 }
