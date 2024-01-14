@@ -19,7 +19,7 @@ struct ProfileEditButton: View {
                 RoundedRectangle(
                     cornerSize: CGSize(width: 6, height: 6),
                     style: .circular
-                ).stroke(.clear, lineWidth: 1)
+                ).stroke(.black, lineWidth: 1)
             }
     }
 }
