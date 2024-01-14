@@ -19,12 +19,7 @@ struct UserSummaryCell: View {
             userToShowprofile = user
         }, label: {
             HStack {
-                Image(profileURL: user.profileImageURL)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 48, height: 48)
-                    .clipShape(Circle())
-                
+                CircularProfileImageView(user: user)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(user.userName)
