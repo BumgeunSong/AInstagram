@@ -28,11 +28,19 @@ struct UploadPostView: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    Task { await viewModel.loadImage() }
+                }, label: {
                     Text("Next").fontWeight(.semibold)
                 }).tint(.black)
                 
             }.padding(.horizontal)
+            
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            }
             
             TextField(
                 "프롬프트를 입력하세요",
@@ -54,13 +62,6 @@ struct UploadPostView: View {
                         alignment: .leading
                     )
                     .padding(.horizontal)
-                List(
-                    viewModel.recentPrompts,
-                    id: \.self,
-                    selection: $prompt
-                ) { prompt in
-                    Text(prompt)
-                }.listStyle(.plain)
             }
         }.task {
             await viewModel.loadRecentPrompts()
