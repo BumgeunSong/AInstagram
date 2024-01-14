@@ -40,14 +40,27 @@ final class ProfileEditViewModel: ObservableObject {
     
     func updateUserData() async throws {
         
-        var dataToUpdate = [String: Any]()
+        var dataToUpdate = [String: String]()
         
         if let profileUIImage {
             let imageURL = try await ImageUploader.uploadImage(image: profileUIImage)
             dataToUpdate["profileImageURL"] = imageURL
         }
         
-        let updatedUser = User(id: user.id, userName: username, fullName: fullname, bio: bio, profileImageURL: nil, email: user.email)
-        try await AuthService.shared.updateUser(user: updatedUser)
+        if username != user.userName {
+            dataToUpdate["userName"] = username
+        }
+        
+        if username != user.userName {
+            dataToUpdate["fullname"] = fullname
+        }
+        
+        if bio != user.bio {
+            dataToUpdate["bio"] = bio
+        }
+        
+        if dataToUpdate.isNotEmpty {
+            try await AuthService.shared.updateUser(userID: user.id, data: dataToUpdate)
+        }
     }
 }

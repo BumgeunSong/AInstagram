@@ -73,6 +73,7 @@
 		BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */; };
 		BC88D6E12B53C2280051751A /* ProfileEditTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E02B53C2280051751A /* ProfileEditTextField.swift */; };
 		BC88D6E42B53D3680051751A /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E32B53D3680051751A /* ImageUploader.swift */; };
+		BC88D6E82B53D7700051751A /* Collection+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E72B53D7700051751A /* Collection+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		BC88D6DC2B4FFF980051751A /* ProfileFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFollowButton.swift; sourceTree = "<group>"; };
 		BC88D6E02B53C2280051751A /* ProfileEditTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditTextField.swift; sourceTree = "<group>"; };
 		BC88D6E32B53D3680051751A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		BC88D6E72B53D7700051751A /* Collection+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 				BC1D57842B4837E900D05008 /* UserPostGridView.swift */,
 				BC1D57DE2B4AE0FC00D05008 /* ProfileImage.swift */,
 				BC1D57E02B4AE36B00D05008 /* String+Util.swift */,
+				BC88D6E72B53D7700051751A /* Collection+Util.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				BC1D57D72B4A96F900D05008 /* EnterUserNameView.swift in Sources */,
 				BC88D6E42B53D3680051751A /* ImageUploader.swift in Sources */,
 				BC1D57CF2B4A8F9A00D05008 /* SignupViewModel.swift in Sources */,
+				BC88D6E82B53D7700051751A /* Collection+Util.swift in Sources */,
 				BC1D57D92B4A9A3900D05008 /* CompleteSignUpView.swift in Sources */,
 				BC1D57852B4837E900D05008 /* UserPostGridView.swift in Sources */,
 				BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */,
