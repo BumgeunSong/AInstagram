@@ -19,10 +19,14 @@ final class ProfileEditViewModel: ObservableObject {
     @Published var bio: String
     @Published var isLoading: Bool = false
     @Published var user: User
+    @Binding var userToShowProfile: User
     
     @Published var selectedImage: UIImage?
     
-    init(user: User) {
+    init(userToShowProfile: Binding<User>) {
+        self._userToShowProfile = userToShowProfile
+        
+        let user = userToShowProfile.wrappedValue
         self.user = user
         self.selectedItem = nil
         self.username = user.userName

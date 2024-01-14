@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    
-    let user: User
+    @Binding var userToShowProfile: User
     @State var showEditProfile: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
             /// pic and stats
             HStack {
-                CircularProfileImageView(user: user, size: 80)
+                CircularProfileImageView(user: userToShowProfile, size: 80)
                 Spacer()
                 HStack(spacing: 16) {
                     UserStatView(title: "Posts", value: 3)
@@ -28,13 +27,13 @@ struct ProfileHeaderView: View {
             
             // name and bio
             VStack(alignment: .leading, spacing: 4) {
-                Text(user.userName)
+                Text(userToShowProfile.userName)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text(user.fullName.orEmpty)
+                Text(userToShowProfile.fullName.orEmpty)
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text(user.bio.orEmpty)
+                Text(userToShowProfile.bio.orEmpty)
                     .font(.footnote)
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -46,7 +45,7 @@ struct ProfileHeaderView: View {
             Button(action: {
                 showEditProfile.toggle()
             }, label: {
-                if user.isCurrentUser {
+                if userToShowProfile.isCurrentUser {
                     ProfileEditButton()
                 } else {
                     ProfileFollowButton()
@@ -61,12 +60,12 @@ struct ProfileHeaderView: View {
             onDismiss: {
                 
             }, content: {
-                let viewModel = ProfileEditViewModel(user: user)
+                let viewModel = ProfileEditViewModel(userToShowProfile: $userToShowProfile)
                 ProfileEditView(viewModel: viewModel)
             })
     }
 }
 
 #Preview {
-    ProfileHeaderView(user: .mock[0])
+    ProfileHeaderView(userToShowProfile: .constant(.mock[0]))
 }

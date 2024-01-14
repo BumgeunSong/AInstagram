@@ -98,5 +98,9 @@ struct ProfileEditView: View {
 }
 
 #Preview {
-    ProfileEditView(viewModel: ProfileEditViewModel(user: .mock[0]))
+    ProfileEditView(
+        viewModel: ProfileEditViewModel(
+            userToShowProfile: .constant(.mock[0])
+        )
+    )
 }

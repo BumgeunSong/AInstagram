@@ -17,7 +17,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                ProfileHeaderView(user: userToShowProfile)
+                ProfileHeaderView(userToShowProfile: $userToShowProfile)
                 UserPostGridView(user: userToShowProfile, posts: posts)
             }
             .navigationTitle("Profile")
