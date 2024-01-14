@@ -15,7 +15,7 @@ struct FeedCell: View {
         // Profile Pic + Username
         VStack {
             HStack {
-                CircularProfileImageView(user: post.creator)
+                CircularProfileImageView(user: post.creator, size: 48)
                 
                 Text(post.creator.userName)
                     .font(.subheadline)

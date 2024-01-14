@@ -19,7 +19,7 @@ final class ProfileEditViewModel: ObservableObject {
     @Published var fullname: String
     @Published var bio: String
     @Published var isLoading: Bool = false
-    private var user: User
+    @Published var user: User
     
     private var profileUIImage: UIImage?
     
