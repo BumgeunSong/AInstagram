@@ -14,6 +14,7 @@ class UploadPostViewModel: ObservableObject {
     @Published var recentPrompts: [String] = []
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
+    private var imageLoadingTask: Task<UIImage?, Never>?
     
     func loadRecentPrompts() async {
         self.recentPrompts = [
@@ -24,11 +25,19 @@ class UploadPostViewModel: ObservableObject {
         ]
     }
     
-    func loadImage() {
-        Task {
-            self.image = await ImageGenerator().generate(from: prompt)
+    func loadImage() async {
+        if let imageLoadingTask {
+            return print(">>>>> Duplicate API Call")
         }
+        
+        self.imageLoadingTask = Task {
+            return await ImageGenerator().generate(from: prompt)
+        }
+        
         isLoading = true
+        self.image = await imageLoadingTask?.value
         isLoading = false
+        
+        self.imageLoadingTask = nil
     }
 }
