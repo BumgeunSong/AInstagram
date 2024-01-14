@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import Kingfisher
 
 struct ProfileEditView: View {
     @Environment(\.dismiss) var dismiss
