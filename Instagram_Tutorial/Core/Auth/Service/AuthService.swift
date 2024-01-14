@@ -41,6 +41,11 @@ class AuthService {
         }
     }
     
+    func updateUser(user: User) async throws {
+        guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
+        try await userDB.document(user.id).setData(encodedUser)
+    }
+    
     func loadUserData() async throws {
         self.userSession = Auth.auth().currentUser
         guard let currentUID = userSession?.uid else { return }

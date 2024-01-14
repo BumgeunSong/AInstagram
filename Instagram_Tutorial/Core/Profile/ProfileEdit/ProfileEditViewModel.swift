@@ -11,13 +11,6 @@ import Firebase
 
 @MainActor
 final class ProfileEditViewModel: ObservableObject {
-    init(user: User) {
-        self.selectedImage = nil
-        self.username = user.userName
-        self.fullname = user.fullName.orEmpty
-        self.bio = user.bio.orEmpty
-    }
-    
     @Published var selectedImage: PhotosPickerItem? {
         didSet { Task { await loadImage(fromItem: selectedImage) }}
     }
@@ -25,11 +18,25 @@ final class ProfileEditViewModel: ObservableObject {
     @Published var username: String
     @Published var fullname: String
     @Published var bio: String
+    private var user: User
+    
+    init(user: User) {
+        self.user = user
+        self.selectedImage = nil
+        self.username = user.userName
+        self.fullname = user.fullName.orEmpty
+        self.bio = user.bio.orEmpty
+    }
     
     func loadImage(fromItem item: PhotosPickerItem?) async {
         guard let item else { return }
         guard let data = try? await item.loadTransferable(type: Data.self) else { return }
         guard let uiImage = UIImage(data: data) else { return }
         self.profileImage = Image(uiImage: uiImage)
+    }
+    
+    func updateUserData() async throws {
+        let updatedUser = User(id: user.id, userName: username, fullName: fullname, bio: bio, profileImageURL: nil, email: user.email)
+        try await AuthService.shared.updateUser(user: updatedUser)
     }
 }
