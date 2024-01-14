@@ -75,6 +75,8 @@
 		BC88D6E82B53D7700051751A /* Collection+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6E72B53D7700051751A /* Collection+Util.swift */; };
 		BC88D6EB2B53E0240051751A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC88D6EA2B53E0240051751A /* Kingfisher */; };
 		BC88D6ED2B53E09E0051751A /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */; };
+		BC88D6F02B53FF430051751A /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = BC88D6EF2B53FF430051751A /* OpenAIKit */; };
+		BC88D6F22B53FF8C0051751A /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6F12B53FF8C0051751A /* ImageGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +121,9 @@
 		BC88D6E32B53D3680051751A /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		BC88D6E72B53D7700051751A /* Collection+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Util.swift"; sourceTree = "<group>"; };
 		BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		BC88D6F12B53FF8C0051751A /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
+		BC88D6F32B540C1B0051751A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		BC88D6F42B540D130051751A /* Instagram-Tutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Instagram-Tutorial-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +152,7 @@
 				BC1D57C02B4A741700D05008 /* FirebaseRemoteConfig in Frameworks */,
 				BC1D579C2B4A741700D05008 /* FirebaseAppDistribution-Beta in Frameworks */,
 				BC1D57A02B4A741700D05008 /* FirebaseAuthCombine-Community in Frameworks */,
+				BC88D6F02B53FF430051751A /* OpenAIKit in Frameworks */,
 				BC1D57BE2B4A741700D05008 /* FirebasePerformance in Frameworks */,
 				BC1D57B62B4A741700D05008 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				BC1D57C42B4A741700D05008 /* FirebaseStorage in Frameworks */,
@@ -179,6 +185,7 @@
 		BC1D574D2B3F065D00D05008 /* Instagram_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				BC88D6F42B540D130051751A /* Instagram-Tutorial-Info.plist */,
 				BC1D57612B3F067B00D05008 /* Core */,
 				BC1D57602B3F067200D05008 /* App */,
 				BC1D575D2B3F067100D05008 /* Model */,
@@ -186,6 +193,7 @@
 				BC1D57522B3F065E00D05008 /* Assets.xcassets */,
 				BC1D578E2B4A736700D05008 /* GoogleService-Info.plist */,
 				BC1D57542B3F065E00D05008 /* Preview Content */,
+				BC88D6F32B540C1B0051751A /* Config.xcconfig */,
 			);
 			path = Instagram_Tutorial;
 			sourceTree = "<group>";
@@ -336,6 +344,7 @@
 			children = (
 				BC1D57C72B4A764F00D05008 /* AuthService.swift */,
 				BC88D6E32B53D3680051751A /* ImageUploader.swift */,
+				BC88D6F12B53FF8C0051751A /* ImageGenerator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 				BC1D57C32B4A741700D05008 /* FirebaseStorage */,
 				BC1D57C52B4A741700D05008 /* FirebaseStorageCombine-Community */,
 				BC88D6EA2B53E0240051751A /* Kingfisher */,
+				BC88D6EF2B53FF430051751A /* OpenAIKit */,
 			);
 			productName = Instagram_Tutorial;
 			productReference = BC1D574B2B3F065D00D05008 /* Instagram_Tutorial.app */;
@@ -436,6 +446,7 @@
 			packageReferences = (
 				BC1D57902B4A741700D05008 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BC88D6E92B53E0240051751A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BC88D6EE2B53FF430051751A /* XCRemoteSwiftPackageReference "OpenAIKit" */,
 			);
 			productRefGroup = BC1D574C2B3F065D00D05008 /* Products */;
 			projectDirPath = "";
@@ -477,6 +488,7 @@
 				BC88D6DD2B4FFF980051751A /* ProfileFollowButton.swift in Sources */,
 				BC1D57E12B4AE36B00D05008 /* String+Util.swift in Sources */,
 				BC1D574F2B3F065D00D05008 /* Instagram_TutorialApp.swift in Sources */,
+				BC88D6F22B53FF8C0051751A /* ImageGenerator.swift in Sources */,
 				BC1D57DB2B4AC93100D05008 /* LoginViewModel.swift in Sources */,
 				BC88D6ED2B53E09E0051751A /* CircularProfileImageView.swift in Sources */,
 				BC1D578D2B494A9400D05008 /* Binding+Optional.swift in Sources */,
@@ -509,6 +521,7 @@
 /* Begin XCBuildConfiguration section */
 		BC1D57572B3F065E00D05008 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC88D6F32B540C1B0051751A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -572,6 +585,7 @@
 		};
 		BC1D57582B3F065E00D05008 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC88D6F32B540C1B0051751A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -637,6 +651,7 @@
 				DEVELOPMENT_TEAM = A6HM92H898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Instagram-Tutorial-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,6 +681,7 @@
 				DEVELOPMENT_TEAM = A6HM92H898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Instagram-Tutorial-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -722,6 +738,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.10.2;
+			};
+		};
+		BC88D6EE2B53FF430051751A /* XCRemoteSwiftPackageReference "OpenAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MarcoDotIO/OpenAIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -866,6 +890,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BC88D6E92B53E0240051751A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		BC88D6EF2B53FF430051751A /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC88D6EE2B53FF430051751A /* XCRemoteSwiftPackageReference "OpenAIKit" */;
+			productName = OpenAIKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
