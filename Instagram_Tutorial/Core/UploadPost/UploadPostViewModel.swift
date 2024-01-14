@@ -5,12 +5,14 @@
 //  Created by Bumgeun Song on 1/6/24.
 //
 
-import Foundation
+import UIKit
 
 @MainActor
 class UploadPostViewModel: ObservableObject {
     
+    @Published var prompt: String = ""
     @Published var recentPrompts: [String] = []
+    @Published var image: UIImage?
     
     func loadRecentPrompts() async {
         self.recentPrompts = [
@@ -19,5 +21,11 @@ class UploadPostViewModel: ObservableObject {
             "Generate poetic images of nature, blending landscapes and elements to convey the beauty and harmony of the natural world for nature-centric blogs/environmental causes.",
             "Create stunning photos capturing the essence of a high-fashion runway show, featuring the latest couture."
         ]
+    }
+    
+    func loadImage() {
+        Task {
+            self.image = await ImageGenerator().generate(from: prompt)
+        }
     }
 }

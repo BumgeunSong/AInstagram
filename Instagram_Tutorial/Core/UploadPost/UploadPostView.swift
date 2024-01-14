@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct UploadPostView: View {
-    @State private var prompt: String? = ""
     @StateObject private var viewModel = UploadPostViewModel()
     @Binding var tabIndex: Int
     
@@ -16,7 +15,7 @@ struct UploadPostView: View {
         VStack {
             HStack {
                 Button(action: {
-                    self.prompt = ""
+                    self.viewModel.prompt = ""
                     self.tabIndex = TabIndex.feed
                 }, label: {
                     Image(systemName: "xmark")
@@ -37,7 +36,7 @@ struct UploadPostView: View {
             
             TextField(
                 "프롬프트를 입력하세요",
-                text: Binding($prompt, replacingNilWith: ""),
+                text: $viewModel.prompt,
                 axis: .vertical
             )
             .frame(minHeight: 200)
