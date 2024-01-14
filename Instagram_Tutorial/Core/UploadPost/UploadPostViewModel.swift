@@ -13,6 +13,7 @@ class UploadPostViewModel: ObservableObject {
     @Published var prompt: String = ""
     @Published var recentPrompts: [String] = []
     @Published var image: UIImage?
+    @Published var isLoading: Bool = false
     
     func loadRecentPrompts() async {
         self.recentPrompts = [
@@ -27,5 +28,7 @@ class UploadPostViewModel: ObservableObject {
         Task {
             self.image = await ImageGenerator().generate(from: prompt)
         }
+        isLoading = true
+        isLoading = false
     }
 }

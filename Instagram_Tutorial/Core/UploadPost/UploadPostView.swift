@@ -42,13 +42,20 @@ struct UploadPostView: View {
                     .scaledToFit()
             }
             
-            TextField(
-                "프롬프트를 입력하세요",
-                text: $viewModel.prompt,
-                axis: .vertical
-            )
-            .frame(minHeight: 200)
-            .padding(.all)
+            ZStack {
+                if viewModel.isLoading {
+                    ProgressView("이미지 생성 중...").progressViewStyle(.circular)
+                }
+                
+                TextField(
+                    "프롬프트를 입력하세요",
+                    text: $viewModel.prompt,
+                    axis: .vertical
+                )
+                .frame(minHeight: 200)
+                .padding(.all)
+            }
+            
             
             
             Spacer()
