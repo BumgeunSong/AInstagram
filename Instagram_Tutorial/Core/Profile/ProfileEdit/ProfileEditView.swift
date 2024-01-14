@@ -30,7 +30,9 @@ struct ProfileEditView: View {
                     
                     Spacer()
                     
-                    Button(action: {}, label: {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
                         Text("Done")
                             .font(.subheadline)
                             .bold()
