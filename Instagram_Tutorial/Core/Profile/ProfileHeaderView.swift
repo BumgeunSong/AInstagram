@@ -64,7 +64,8 @@ struct ProfileHeaderView: View {
             onDismiss: {
                 
             }, content: {
-                Text("Edit profile View")
+                let viewModel = ProfileEditViewModel(user: user)
+                ProfileEditView(viewModel: viewModel)
             })
     }
 }
