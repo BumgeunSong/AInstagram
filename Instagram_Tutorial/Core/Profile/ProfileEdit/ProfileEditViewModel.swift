@@ -18,6 +18,7 @@ final class ProfileEditViewModel: ObservableObject {
     @Published var username: String
     @Published var fullname: String
     @Published var bio: String
+    @Published var isLoading: Bool = false
     private var user: User
     
     private var profileUIImage: UIImage?
@@ -39,7 +40,7 @@ final class ProfileEditViewModel: ObservableObject {
     }
     
     func updateUserData() async throws {
-        
+        isLoading = true
         var dataToUpdate = [String: String]()
         
         if let profileUIImage {
@@ -61,6 +62,8 @@ final class ProfileEditViewModel: ObservableObject {
         
         if dataToUpdate.isNotEmpty {
             try await AuthService.shared.updateUser(userID: user.id, dataToUpdate: dataToUpdate)
+            isLoading = false
         }
+        isLoading = false
     }
 }

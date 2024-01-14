@@ -31,8 +31,10 @@ struct ProfileEditView: View {
                     Spacer()
                     
                     Button(action: {
-                        Task { try await viewModel.updateUserData() }
-                        dismiss()
+                        Task {
+                            try await viewModel.updateUserData()
+                            dismiss()
+                        }
                     }, label: {
                         Text("Done")
                             .font(.subheadline)
@@ -45,52 +47,58 @@ struct ProfileEditView: View {
             
             Divider()
         }
-        
-        // Profile
-        PhotosPicker(selection: $viewModel.selectedImage) {
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView("Uploading...").progressViewStyle(.circular)
+            }
             VStack {
-                if let image = viewModel.profileImage {
-                    image
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundStyle(.white)
-                        .background(.gray)
-                        .clipShape(Circle())
-                } else {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundStyle(.white)
-                        .background(.gray)
-                        .clipShape(Circle())
+                // Profile
+                PhotosPicker(selection: $viewModel.selectedImage) {
+                    VStack {
+                        if let image = viewModel.profileImage {
+                            image
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .foregroundStyle(.white)
+                                .background(.gray)
+                                .clipShape(Circle())
+                        } else {
+                            Image(systemName: "person")
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .foregroundStyle(.white)
+                                .background(.gray)
+                                .clipShape(Circle())
+                        }
+                        
+                        Text("Edit Profile Picture")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
                 }
+                .padding(.vertical)
                 
-                Text("Edit Profile Picture")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
+                Divider()
+                
+                ProfileEditTextField(
+                    title: "username",
+                    placeholder: viewModel.username,
+                    text: $viewModel.username
+                )
+                ProfileEditTextField(
+                    title: "fullname",
+                    placeholder: viewModel.fullname,
+                    text: $viewModel.fullname
+                )
+                ProfileEditTextField(
+                    title: "bio",
+                    placeholder: viewModel.bio,
+                    text: $viewModel.bio
+                )
+                
+                Spacer()
             }
         }
-        .padding(.vertical)
-        
-        Divider()
-        
-        ProfileEditTextField(
-            title: "username",
-            placeholder: viewModel.username,
-            text: $viewModel.username
-        )
-        ProfileEditTextField(
-            title: "fullname",
-            placeholder: viewModel.fullname,
-            text: $viewModel.fullname
-        )
-        ProfileEditTextField(
-            title: "bio",
-            placeholder: viewModel.bio,
-            text: $viewModel.bio
-        )
-        
-        Spacer()
     }
 }
 
