@@ -64,6 +64,11 @@ final class ProfileEditViewModel: ObservableObject {
         
         if dataToUpdate.isNotEmpty {
             try await AuthService.shared.updateUser(userID: user.id, dataToUpdate: dataToUpdate)
+            
+            if let updatedUser = await AuthService.shared.loadUserData(uid: user.id) {
+                self.userToShowProfile = updatedUser
+            }
+            
             isLoading = false
         }
         isLoading = false
