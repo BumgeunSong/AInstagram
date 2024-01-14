@@ -60,7 +60,7 @@ final class ProfileEditViewModel: ObservableObject {
         }
         
         if dataToUpdate.isNotEmpty {
-            try await AuthService.shared.updateUser(userID: user.id, data: dataToUpdate)
+            try await AuthService.shared.updateUser(userID: user.id, dataToUpdate: dataToUpdate)
         }
     }
 }
