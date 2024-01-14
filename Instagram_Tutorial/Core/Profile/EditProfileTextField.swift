@@ -21,6 +21,7 @@ struct EditProfileTextField: View {
                     .frame(height: 36)
             } label: {
                 Text(title)
+                    .fontWeight(.semibold)
             }
             Divider()
         }

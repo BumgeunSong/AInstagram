@@ -6,48 +6,80 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileEditView: View {
-    @State var username: String = ""
-    @State var fullname: String = ""
-    @State var bio: String = ""
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel: ProfileEditViewModel
     
     var body: some View {
-        
         VStack {
-            // 프로필 이미지
+            // toolbar
+            VStack {
+                HStack {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        Text("Cancel")
+                    })
+                    
+                    Spacer()
+                    
+                    Text("Edit Profile")
+                        .fontWeight(.semibold)
+                    
+                    Spacer()
+                    
+                    Button(action: {}, label: {
+                        Text("Done")
+                            .font(.subheadline)
+                            .bold()
+                    })
+                }
+                
+            }
+            .padding(.horizontal)
             
-            // 풀네임
-            TextField(text: $username, prompt: Text("Full Name")) {
-                Text("Full name")
-            }
-            // 사용자 이름
-            TextField(text: $fullname, prompt: Text("User name")) {
-                Text("User name")
-            }
-            
-            // Bio
-            TextField(text: $bio, prompt: Text("Bio")) {
-                Text("bio")
-            }
-        }.padding(.horizontal)
+            Divider()
+        }
         
-        // 수정하기 CTA
-        NavigationLink {
-            //
-        } label: {
-            Text("확인")
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, maxHeight: 44)
-                .foregroundStyle(.white)
-                .background(Color(uiColor: .systemBlue))
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .padding(.horizontal, 24)
-        }.padding(.vertical)
+        // Profile
+        PhotosPicker(selection: $viewModel.selectedImage) {
+            VStack {
+                Image(systemName: "person")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .foregroundStyle(.white)
+                    .background(.gray)
+                    .clipShape(Circle())
+                
+                Text("Edit Profile Picture")
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+            }
+        }
+        .padding(.vertical)
+        
+        Divider()
+        
+        EditProfileTextField(
+            title: "username",
+            placeholder: viewModel.username,
+            text: $viewModel.username
+        )
+        EditProfileTextField(
+            title: "fullname",
+            placeholder: viewModel.fullname,
+            text: $viewModel.fullname
+        )
+        EditProfileTextField(
+            title: "bio",
+            placeholder: viewModel.bio,
+            text: $viewModel.bio
+        )
     }
 }
 
 #Preview {
-    ProfileEditView()
+    ProfileEditView(viewModel: ProfileEditViewModel(user: .mock[0]))
 }
