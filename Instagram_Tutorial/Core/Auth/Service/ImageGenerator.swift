@@ -16,6 +16,8 @@ struct ImageGenerator {
     
     func generate(from prompt: String) async -> UIImage? {
         guard let apiKey else { return nil }
+        if prompt.isEmpty { return nil }
+        
         let openAI = OpenAI(.init(organizationId: "bumgeun.song", apiKey: apiKey))
         
         do {
