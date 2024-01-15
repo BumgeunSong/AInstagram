@@ -69,6 +69,13 @@ struct UploadPostView: View {
                         alignment: .leading
                     )
                     .padding(.horizontal)
+                
+                List(
+                    viewModel.recentPrompts,
+                    selection: $viewModel.selectedPrompt
+                ) { prompt in
+                    Text(prompt.content)
+                }.listStyle(.plain)
             }
         }.task {
             await viewModel.loadRecentPrompts()

@@ -10,8 +10,15 @@ import UIKit
 @MainActor
 class UploadPostViewModel: ObservableObject {
     
-    @Published var recentPrompts: [String] = []
     @Published var currentPrompt: String = ""
+    @Published var selectedPrompt: Prompt? {
+        didSet {
+            if let content = selectedPrompt?.content {
+                currentPrompt = content
+            }
+        }
+    }
+    @Published var recentPrompts: [Prompt] = []
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
     private var imageLoadingTask: Task<UIImage?, Never>?
@@ -22,7 +29,9 @@ class UploadPostViewModel: ObservableObject {
             "Generate a cartoon character in the style of classic Disney animation, with large, expressive eyes and whimsical features.",
             "Generate poetic images of nature, blending landscapes and elements to convey the beauty and harmony of the natural world for nature-centric blogs/environmental causes.",
             "Create stunning photos capturing the essence of a high-fashion runway show, featuring the latest couture."
-        ]
+        ].map({ content in
+            Prompt(content: content)
+        })
     }
     
     func loadImage() async {
