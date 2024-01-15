@@ -72,9 +72,12 @@ struct UploadPostView: View {
                 
                 List(
                     viewModel.recentPrompts,
-                    selection: $viewModel.selectedPrompt
+                    id: \.id
                 ) { prompt in
                     Text(prompt.content)
+                        .onTapGesture {
+                            viewModel.selectedPrompt = prompt
+                        }
                 }.listStyle(.plain)
             }
         }.task {
