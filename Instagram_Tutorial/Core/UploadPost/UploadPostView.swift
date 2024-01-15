@@ -34,7 +34,9 @@ struct UploadPostView: View {
                     Text("Next").fontWeight(.semibold)
                 }).tint(.black)
                 
-            }.padding(.horizontal)
+            }
+            .padding(.horizontal)
+            .allowsHitTesting(!viewModel.isLoading)
             
             if let image = viewModel.image {
                 Image(uiImage: image)
