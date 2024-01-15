@@ -10,8 +10,8 @@ import UIKit
 @MainActor
 class UploadPostViewModel: ObservableObject {
     
-    @Published var prompt: String = ""
     @Published var recentPrompts: [String] = []
+    @Published var currentPrompt: String = ""
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
     private var imageLoadingTask: Task<UIImage?, Never>?
@@ -31,7 +31,7 @@ class UploadPostViewModel: ObservableObject {
         }
         
         self.imageLoadingTask = Task {
-            return await ImageGenerator().generate(from: prompt)
+            return await ImageGenerator().generate(from: currentPrompt)
         }
         
         isLoading = true

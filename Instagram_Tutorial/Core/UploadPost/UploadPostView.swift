@@ -15,7 +15,7 @@ struct UploadPostView: View {
         VStack {
             HStack {
                 Button(action: {
-                    self.viewModel.prompt = ""
+                    self.viewModel.currentPrompt = ""
                     self.tabIndex = TabIndex.feed
                 }, label: {
                     Image(systemName: "xmark")
@@ -49,7 +49,7 @@ struct UploadPostView: View {
                 
                 TextField(
                     "프롬프트를 입력하세요",
-                    text: $viewModel.prompt,
+                    text: $viewModel.currentPrompt,
                     axis: .vertical
                 )
                 .frame(minHeight: 200)
