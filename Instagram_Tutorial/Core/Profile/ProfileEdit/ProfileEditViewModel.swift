@@ -54,8 +54,8 @@ final class ProfileEditViewModel: ObservableObject {
             dataToUpdate["userName"] = username
         }
         
-        if username != user.userName {
-            dataToUpdate["fullname"] = fullname
+        if fullname != user.fullName {
+            dataToUpdate["fullName"] = fullname
         }
         
         if bio != user.bio {
