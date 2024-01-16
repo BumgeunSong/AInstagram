@@ -66,6 +66,7 @@ class AuthService {
         do {
             try Auth.auth().signOut()
             userSession = nil
+            currentUser = nil
         } catch {
             print("로그아웃 에러: \(error.localizedDescription)")
         }
