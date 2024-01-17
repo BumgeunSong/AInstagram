@@ -45,9 +45,13 @@ class UploadPostViewModel: ObservableObject {
         
         isLoading = true
         self.image = await imageLoadingTask?.value
-        isLoading = false
-        
         self.imageLoadingTask = nil
+        
+        Task {
+            try await uploadPost(image: self.image)
+        }
+        
+        isLoading = false
     }
     
     func uploadPost(image: UIImage?) async throws {
