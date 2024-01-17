@@ -50,6 +50,24 @@ class UploadPostViewModel: ObservableObject {
         self.imageLoadingTask = nil
     }
     
+    func uploadPost() async throws {
+        guard let user = AuthService.shared.currentUser else { return }
+        guard let image else { return }
+        guard let caption = selectedPrompt?.content else { return }
+        guard let imageURL = try await ImageUploader.uploadImage(image: image) else { return }
+        
+        let post = Post(
+            id: UUID().uuidString,
+            creator: user,
+            imageURL: imageURL,
+            likes: 0,
+            caption: caption,
+            createdAt: .now
+        )
+        
+        await PostUploader.upload(post: post)
+    }
+    
     func reset() {
         self.currentPrompt = .empty
         self.selectedPrompt = nil

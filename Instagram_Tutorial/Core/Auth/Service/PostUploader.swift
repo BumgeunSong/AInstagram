@@ -10,9 +10,9 @@ import Firebase
 import FirebaseFirestore
 
 struct PostUploader {
-    private let postDB = Firestore.firestore().collection("posts")
+    static private let postDB = Firestore.firestore().collection("posts")
     
-    func upload(post: Post) async {
+    static func upload(post: Post) async {
         guard let encodedPost = try? Firestore.Encoder().encode(post) else { return }
         try? await postDB.document(post.id).setData(encodedPost)
     }
