@@ -10,7 +10,7 @@ import UIKit
 @MainActor
 class UploadPostViewModel: ObservableObject {
     
-    @Published var currentPrompt: String = ""
+    @Published var currentPrompt: String = .empty
     @Published var selectedPrompt: Prompt? {
         didSet {
             if let content = selectedPrompt?.content {
