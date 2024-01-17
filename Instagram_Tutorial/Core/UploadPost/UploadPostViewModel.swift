@@ -35,7 +35,7 @@ class UploadPostViewModel: ObservableObject {
     }
     
     func loadImage() async {
-        if let imageLoadingTask {
+        if imageLoadingTask != nil {
             return print(">>>>> Duplicate API Call")
         }
         
