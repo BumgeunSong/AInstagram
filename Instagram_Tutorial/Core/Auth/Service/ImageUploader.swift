@@ -10,12 +10,15 @@ import Firebase
 import FirebaseStorage
 
 struct ImageUploader {
+    static func reference(filename: String) -> StorageReference {
+        Storage.storage().reference(withPath: "/profile_images/\(filename)")
+    }
     static func uploadImage(image: UIImage) async throws -> String? {
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return nil }
         let filename = UUID().uuidString
-        let reference = Storage.storage().reference(withPath: "/profile_images/\(filename)")
-        
+    
         do {
+            let reference = reference(filename: filename)
             let _ = try await reference.putDataAsync(imageData)
             let url = try await reference.downloadURL()
             return url.absoluteString
