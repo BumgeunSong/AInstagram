@@ -15,7 +15,7 @@ struct UploadPostView: View {
         VStack {
             HStack {
                 Button(action: {
-                    self.viewModel.currentPrompt = ""
+                    self.viewModel.reset()
                     self.tabIndex = TabIndex.feed
                 }, label: {
                     Image(systemName: "xmark")

@@ -49,4 +49,10 @@ class UploadPostViewModel: ObservableObject {
         
         self.imageLoadingTask = nil
     }
+    
+    func reset() {
+        self.currentPrompt = .empty
+        self.selectedPrompt = nil
+        self.image = nil
+    }
 }
