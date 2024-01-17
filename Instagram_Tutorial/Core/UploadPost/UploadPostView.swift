@@ -29,7 +29,11 @@ struct UploadPostView: View {
                 Spacer()
                 
                 Button(action: {
-                    Task { await viewModel.loadImage() }
+                    Task {
+                        await viewModel.loadImage()
+                        self.viewModel.reset()
+                        self.tabIndex = TabIndex.feed
+                    }
                 }, label: {
                     Text("Next").fontWeight(.semibold)
                 }).tint(.black)
