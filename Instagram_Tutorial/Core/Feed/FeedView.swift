@@ -25,7 +25,7 @@ struct FeedView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                        Image(.instagramTypoLogo)
+                        Image(.ainstagramLogo)
                             .resizable()
                             .tint(.black)
                             .frame(width: 84, height: 48)
