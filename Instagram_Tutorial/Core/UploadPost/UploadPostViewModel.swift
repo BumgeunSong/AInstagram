@@ -70,7 +70,7 @@ class UploadPostViewModel: ObservableObject {
             createdAt: .now
         )
         
-        await PostUploader.upload(post: post)
+        await PostService.upload(post: post)
     }
     
     func reset() {
