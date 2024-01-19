@@ -30,7 +30,7 @@ struct MainTabView: View {
                 .tabItem { Image(systemName: "person") }
                 .tag(TabIndex.profile)
         }
-        .tint(.black)
+        .padding(.vertical)
     }
 }
 
