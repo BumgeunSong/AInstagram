@@ -39,7 +39,6 @@ struct UploadPostView: View {
                 }).tint(.black)
                 
             }
-            .padding(.all)
             .allowsHitTesting(!viewModel.isLoading)
             
             if let image = viewModel.image {
