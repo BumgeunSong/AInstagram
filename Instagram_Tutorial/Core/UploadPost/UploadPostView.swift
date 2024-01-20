@@ -52,38 +52,38 @@ struct UploadPostView: View {
                     ProgressView("이미지 생성 중...").progressViewStyle(.circular).tint(.accentColor)
                 }
                 
-                TextField(
-                    "프롬프트를 입력하세요",
-                    text: $viewModel.currentPrompt,
-                    axis: .vertical
-                )
-                .frame(minHeight: 200)
-                .padding(.all)
-            }
-            
-            
-            
-            Spacer()
-            
-            VStack {
-                Divider().padding(.all)
-                Text("최근 프롬프트")
-                    .fontWeight(.semibold)
-                    .frame(
-                        maxWidth: .infinity,
-                        alignment: .leading
+                VStack {
+                    TextField(
+                        "프롬프트를 입력하세요",
+                        text: $viewModel.currentPrompt,
+                        axis: .vertical
                     )
-                    .padding(.horizontal)
-                
-                List(
-                    viewModel.recentPrompts,
-                    id: \.id
-                ) { prompt in
-                    Text(prompt.content)
-                        .onTapGesture {
-                            viewModel.selectedPrompt = prompt
-                        }
-                }.listStyle(.plain)
+                    .frame(minHeight: 200)
+                    .padding(.all)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Divider().padding(.all)
+                        Text("최근 프롬프트")
+                            .fontWeight(.semibold)
+                            .frame(
+                                maxWidth: .infinity,
+                                alignment: .leading
+                            )
+                            .padding(.horizontal)
+                        
+                        List(
+                            viewModel.recentPrompts,
+                            id: \.id
+                        ) { prompt in
+                            Text(prompt.content)
+                                .onTapGesture {
+                                    viewModel.selectedPrompt = prompt
+                                }
+                        }.listStyle(.plain)
+                    }
+                }
             }
         }.task {
             await viewModel.loadRecentPrompts()
