@@ -28,16 +28,16 @@ struct LoginView: View {
                     password: $viewModel.password
                 )
                 
-                Button(action: {
-                    print("Forgot Password")
-                }, label: {
-                    Text("Forgot Password?")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .padding(.vertical)
-                        .padding(.trailing, 24)
-                })
-                .frame(maxWidth: .infinity, alignment: .trailing)
+//                Button(action: {
+//                    print("Forgot Password")
+//                }, label: {
+//                    Text("Forgot Password?")
+//                        .font(.footnote)
+//                        .fontWeight(.semibold)
+//                        .padding(.vertical)
+//                        .padding(.trailing, 24)
+//                })
+//                .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Button(action: {
                     Task { try await viewModel.login() }
@@ -53,28 +53,11 @@ struct LoginView: View {
                 })
                 .padding(.vertical)
                 
-                Text("or").font(.footnote)
-                
-                Button(action: {
-                    print("Sign in with Apple")
-                }, label: {
-                    SignInWithAppleButton(onRequest: {_ in
-                        print("onRequest")
-                    }, onCompletion: {_ in
-                        print("onCompletion")
-                    })
-                    .frame(maxWidth: .infinity, maxHeight: 44)
-                    .padding(.horizontal, 24)
-                    .background(.background)
-                })
-                .padding(.vertical)
-                
                 Spacer()
                 
                 Divider().padding(.horizontal)
                 NavigationLink {
                     EnterEmailView()
-                        
                 } label: {
                     HStack(spacing: 4) {
                         Text("Don't have an account?")
