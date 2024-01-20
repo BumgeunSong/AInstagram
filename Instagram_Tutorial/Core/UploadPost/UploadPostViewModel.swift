@@ -71,6 +71,11 @@ class UploadPostViewModel: ObservableObject {
         )
         
         await PostService.upload(post: post)
+        
+        try await AuthService.shared.updateUser(
+            userID: user.id,
+            dataToUpdate: ["lastUploadAt": Date.now.ISO8601Format()]
+        )
     }
     
     func reset() {
