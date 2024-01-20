@@ -39,11 +39,14 @@ struct UploadPostView: View {
                 }).tint(.black)
                 
             }
+            .padding(.horizontal)
             .allowsHitTesting(!viewModel.isLoading)
             
             ZStack {
                 if viewModel.isLoading {
-                    ProgressView("이미지 생성 중...").progressViewStyle(.circular).tint(.accentColor)
+                    ProgressView("이미지 생성 중...")
+                        .progressViewStyle(.circular)
+                        .tint(.accentColor)
                 }
                 
                 VStack {
