@@ -57,6 +57,10 @@ struct UploadPostView: View {
                     
                     Spacer()
                     
+                    Text("포스트는 하루에 3번까지 업로드 가능해요.")
+                        .font(.footnote)
+                        .tint(.gray)
+                    
                     VStack {
                         Divider().padding(.all)
                         Text("최근 프롬프트")
