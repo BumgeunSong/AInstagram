@@ -49,7 +49,7 @@ struct UploadPostView: View {
             
             ZStack {
                 if viewModel.isLoading {
-                    ProgressView("이미지 생성 중...").progressViewStyle(.circular)
+                    ProgressView("이미지 생성 중...").progressViewStyle(.circular).tint(.accentColor)
                 }
                 
                 TextField(
