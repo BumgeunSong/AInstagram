@@ -85,6 +85,7 @@ struct UploadPostView: View {
                         }.listStyle(.plain)
                     }
                 }
+                .allowsHitTesting(!viewModel.isLoading)
             }
         }.task {
             await viewModel.loadRecentPrompts()
