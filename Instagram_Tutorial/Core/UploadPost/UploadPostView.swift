@@ -41,12 +41,6 @@ struct UploadPostView: View {
             }
             .allowsHitTesting(!viewModel.isLoading)
             
-            if let image = viewModel.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-            }
-            
             ZStack {
                 if viewModel.isLoading {
                     ProgressView("이미지 생성 중...").progressViewStyle(.circular).tint(.accentColor)
