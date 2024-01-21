@@ -16,6 +16,12 @@ struct ImageGenerator {
         return Bundle.main.object(forInfoDictionaryKey: "OpenAI_Key") as? String
     }
     
+    private var currentDateString: String {
+        return Date.now.formatted(date: .abbreviated, time: .omitted)
+    }
+    
+    private let usageDB = Firestore.firestore().collection("usage")
+    
     func generate(from prompt: String, by user: User) async -> UIImage? {
         guard let apiKey else { return nil }
         if prompt.isEmpty { return nil }
@@ -48,10 +54,13 @@ struct ImageGenerator {
     }
     
     func incrementUsage(of user: User) async throws {
-        let usageDB = Firestore.firestore().collection("usage")
-        let currentDateString = Date.now.formatted(date: .abbreviated, time: .omitted)
         try await usageDB.document(user.id).setData([
             "\(currentDateString)": FieldValue.increment(Int64(1))
         ])
+    }
+    
+    func usageOfToday(user: User) async -> Int? {
+        guard let document = try? await usageDB.document(user.id).getDocument() else { return nil }
+        return try? document.data(as: [String: Int].self)[currentDateString]
     }
 }
