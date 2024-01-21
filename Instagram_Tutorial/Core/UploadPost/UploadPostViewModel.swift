@@ -35,12 +35,16 @@ class UploadPostViewModel: ObservableObject {
     }
     
     func loadImage() async {
+        guard let user = AuthService.shared.currentUser else {
+            return
+        }
+        
         if imageLoadingTask != nil {
             return print(">>>>> Duplicate API Call")
         }
         
         self.imageLoadingTask = Task {
-            return await ImageGenerator().generate(from: currentPrompt)
+            return await ImageGenerator().generate(from: currentPrompt, by: user)
         }
         
         isLoading = true

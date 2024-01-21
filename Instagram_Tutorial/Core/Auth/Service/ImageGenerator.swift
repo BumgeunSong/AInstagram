@@ -7,6 +7,8 @@
 
 import UIKit
 import OpenAIKit
+import Firebase
+import FirebaseFirestore
 
 struct ImageGenerator {
     
@@ -14,7 +16,7 @@ struct ImageGenerator {
         return Bundle.main.object(forInfoDictionaryKey: "OpenAI_Key") as? String
     }
     
-    func generate(from prompt: String) async -> UIImage? {
+    func generate(from prompt: String, by user: User) async -> UIImage? {
         guard let apiKey else { return nil }
         if prompt.isEmpty { return nil }
         
@@ -28,6 +30,8 @@ struct ImageGenerator {
             )
             
             let result = try await openAI.createImage(parameters: imageParam)
+            try await incrementUsage(of: user)
+            
             let base64ImageData = result.data[0].image
             return try openAI.decodeBase64Image(base64ImageData)
         } catch {
@@ -41,5 +45,13 @@ struct ImageGenerator {
             print("Failed to generate image: \(error.localizedDescription)")
             return nil
         }
+    }
+    
+    func incrementUsage(of user: User) async throws {
+        let usageDB = Firestore.firestore().collection("usage")
+        let currentDateString = Date.now.formatted(date: .abbreviated, time: .omitted)
+        try await usageDB.document(user.id).setData([
+            "\(currentDateString)": FieldValue.increment(Int64(1))
+        ])
     }
 }
