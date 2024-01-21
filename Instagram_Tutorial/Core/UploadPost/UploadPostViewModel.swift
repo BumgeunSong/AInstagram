@@ -19,7 +19,6 @@ class UploadPostViewModel: ObservableObject {
         }
     }
     @Published var recentPrompts: [Prompt] = []
-    @Published var image: UIImage?
     @Published var isLoading: Bool = false
     @Published var usageLeftToday: Int?
     private var imageLoadingTask: Task<UIImage?, Never>?
@@ -49,11 +48,11 @@ class UploadPostViewModel: ObservableObject {
         }
         
         isLoading = true
-        self.image = await imageLoadingTask?.value
+        let image = await imageLoadingTask?.value
         self.imageLoadingTask = nil
         
         Task {
-            try await uploadPost(image: self.image)
+            try await uploadPost(image: image)
         }
         
         isLoading = false
@@ -96,6 +95,5 @@ class UploadPostViewModel: ObservableObject {
     func reset() {
         self.currentPrompt = .empty
         self.selectedPrompt = nil
-        self.image = nil
     }
 }
