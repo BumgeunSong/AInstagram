@@ -21,6 +21,7 @@ class UploadPostViewModel: ObservableObject {
     @Published var recentPrompts: [Prompt] = []
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
+    @Published var usageLeftToday: Int?
     private var imageLoadingTask: Task<UIImage?, Never>?
     
     func loadRecentPrompts() async {
@@ -56,6 +57,16 @@ class UploadPostViewModel: ObservableObject {
         }
         
         isLoading = false
+    }
+    
+    func loadUsage() async {
+        guard let user = AuthService.shared.currentUser,
+              let usageOfToday = await ImageGenerator().usageOfToday(user: user) else {
+            return
+        }
+        
+        let maxUsage = 3
+        self.usageLeftToday = maxUsage - usageOfToday
     }
     
     func uploadPost(image: UIImage?) async throws {

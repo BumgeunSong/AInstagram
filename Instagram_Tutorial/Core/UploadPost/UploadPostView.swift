@@ -61,9 +61,17 @@ struct UploadPostView: View {
                     
                     Spacer()
                     
-                    Text("포스트는 하루에 3번까지 업로드 가능해요.")
-                        .font(.footnote)
-                        .tint(.gray)
+                    if let usageLeftToday = viewModel.usageLeftToday {
+                        if usageLeftToday <= 0 {
+                            Text("포스트는 하루에 3번까지 업로드 가능해요.")
+                                .font(.footnote)
+                                .tint(.gray)
+                        } else {
+                            Text("오늘 남은 업로드 \(usageLeftToday)/3")
+                                .font(.footnote)
+                                .tint(.gray)
+                        }
+                    }
                     
                     VStack {
                         Divider().padding(.all)
@@ -90,6 +98,7 @@ struct UploadPostView: View {
             }
         }.task {
             await viewModel.loadRecentPrompts()
+            await viewModel.loadUsage()
         }
     }
 }
