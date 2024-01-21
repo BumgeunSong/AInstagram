@@ -19,7 +19,7 @@ struct UploadPostView: View {
                     self.tabIndex = TabIndex.feed
                 }, label: {
                     Image(systemName: "xmark")
-                }).tint(.black)
+                })
                 
                 Spacer()
                 
@@ -36,9 +36,10 @@ struct UploadPostView: View {
                     }
                 }, label: {
                     Text("Next").fontWeight(.semibold)
-                }).tint(.black)
+                })
                 
             }
+            .tint(.accentColor)
             .padding(.horizontal)
             .allowsHitTesting(!viewModel.isLoading)
             
