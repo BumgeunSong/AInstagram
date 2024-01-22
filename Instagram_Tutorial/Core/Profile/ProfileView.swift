@@ -28,7 +28,7 @@ struct ProfileView: View {
                         isSignoutAlertPresented = true
                     }, label: {
                         Image(systemName: "line.3.horizontal")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.accent)
                     })
                     .alert(
                         "로그아웃 하시겠어요?",
