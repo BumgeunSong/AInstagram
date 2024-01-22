@@ -51,10 +51,10 @@ struct FeedCell: View {
             }.padding(.horizontal).padding(.top, 4)
             
             // likes
-            Text("\(post.likes) likes")
+            Text("좋아요 \(post.likes)개")
                 .font(.footnote)
                 .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)  // 왼쪽 정렬로 붙이고 싶을 때
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
                 .padding(.vertical, 1)
             
@@ -72,7 +72,7 @@ struct FeedCell: View {
             Text(post.relativeDate)
                 .font(.footnote)
                 .fontWeight(.semibold)
-                .frame(maxWidth: .infinity, alignment: .leading)  // 왼쪽 정렬로 붙이고 싶을 때
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
                 .padding(.vertical, 1)
                 .foregroundStyle(Color(.darkGray))

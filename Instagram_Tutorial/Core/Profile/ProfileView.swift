@@ -20,7 +20,7 @@ struct ProfileView: View {
                 ProfileHeaderView(userToShowProfile: $userToShowProfile)
                 UserPostGridView(user: userToShowProfile, posts: posts)
             }
-            .navigationTitle("Profile")
+            .navigationTitle("프로필")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {

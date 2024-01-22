@@ -23,7 +23,7 @@ struct UploadPostView: View {
                 
                 Spacer()
                 
-                Text("New Post")
+                Text("새 포스트")
                     .fontWeight(.semibold)
                 
                 Spacer()
@@ -35,7 +35,7 @@ struct UploadPostView: View {
                         self.tabIndex = TabIndex.feed
                     }
                 }, label: {
-                    Text("Next").fontWeight(.semibold)
+                    Text("업로드").fontWeight(.semibold)
                 })
                 
             }

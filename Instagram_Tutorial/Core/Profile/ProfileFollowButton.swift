@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileFollowButton: View {
     var body: some View {
-        Text("Follow")
+        Text("팔로우")
             .font(.subheadline)
             .fontWeight(.semibold)
             .frame(width: 360, height: 32)

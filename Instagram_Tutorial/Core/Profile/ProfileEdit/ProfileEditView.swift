@@ -21,12 +21,12 @@ struct ProfileEditView: View {
                     Button(action: {
                         dismiss()
                     }, label: {
-                        Text("Cancel")
+                        Text("취소")
                     })
                     
                     Spacer()
                     
-                    Text("Edit Profile")
+                    Text("프로필 수정")
                         .fontWeight(.semibold)
                     
                     Spacer()
@@ -37,7 +37,7 @@ struct ProfileEditView: View {
                             dismiss()
                         }
                     }, label: {
-                        Text("Done")
+                        Text("완료")
                             .font(.subheadline)
                             .bold()
                     })
@@ -50,7 +50,7 @@ struct ProfileEditView: View {
         }
         ZStack {
             if viewModel.isLoading {
-                ProgressView("Uploading...").progressViewStyle(.circular)
+                ProgressView("업로드 중...").progressViewStyle(.circular)
             }
             VStack {
                 // Profile
@@ -66,7 +66,7 @@ struct ProfileEditView: View {
                             CircularProfileImageView(user: viewModel.user, size: 80)
                         }
                         
-                        Text("Edit Profile Picture")
+                        Text("프로필 사진 수정")
                             .font(.footnote)
                             .fontWeight(.semibold)
                     }
@@ -76,17 +76,17 @@ struct ProfileEditView: View {
                 Divider()
                 
                 ProfileEditTextField(
-                    title: "username",
+                    title: "닉네임",
                     placeholder: viewModel.username,
                     text: $viewModel.username
                 )
                 ProfileEditTextField(
-                    title: "fullname",
+                    title: "이름",
                     placeholder: viewModel.fullname,
                     text: $viewModel.fullname
                 )
                 ProfileEditTextField(
-                    title: "bio",
+                    title: "바이오",
                     placeholder: viewModel.bio,
                     text: $viewModel.bio
                 )

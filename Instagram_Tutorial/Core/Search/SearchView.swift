@@ -27,7 +27,7 @@ struct SearchView: View {
                     try await viewModel.loadUsers()
                 }
             }
-            .navigationTitle("Explore")
+            .navigationTitle("탐색")
             .navigationBarTitleDisplayMode(.inline)
         }.searchable(
             text: $searchText,
