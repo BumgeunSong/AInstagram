@@ -24,7 +24,7 @@ struct FeedView: View {
             .refreshable {
                 Task { await viewModel.loadPosts() }
             }
-            .navigationTitle("Feed")
+            .navigationTitle("피드")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarLeading) {

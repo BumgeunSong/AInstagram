@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileEditButton: View {
     var body: some View {
-        Text("Edit Profile")
+        Text("프로필 편집")
             .font(.subheadline)
             .fontWeight(.semibold)
             .frame(width: 360, height: 32)
