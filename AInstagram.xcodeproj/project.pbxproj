@@ -83,7 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC1D574B2B3F065D00D05008 /* Instagram_Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram_Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1D574B2B3F065D00D05008 /* AInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1D574E2B3F065D00D05008 /* Instagram_TutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_TutorialApp.swift; sourceTree = "<group>"; };
 		BC1D57502B3F065D00D05008 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BC1D57522B3F065E00D05008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		BC88D6EC2B53E09E0051751A /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		BC88D6F12B53FF8C0051751A /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
 		BC88D6F32B540C1B0051751A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		BC88D6F42B540D130051751A /* Instagram-Tutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Instagram-Tutorial-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BC88D6F42B540D130051751A /* AInstagram-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AInstagram-Info.plist"; sourceTree = SOURCE_ROOT; };
 		BC88D6F52B54BDAC0051751A /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		BC88D6F72B56BD500051751A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		BC88D6F92B58F3780051751A /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 		BC1D57422B3F065D00D05008 = {
 			isa = PBXGroup;
 			children = (
-				BC1D574D2B3F065D00D05008 /* Instagram_Tutorial */,
+				BC1D574D2B3F065D00D05008 /* AInstagram */,
 				BC1D574C2B3F065D00D05008 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,15 +183,15 @@
 		BC1D574C2B3F065D00D05008 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC1D574B2B3F065D00D05008 /* Instagram_Tutorial.app */,
+				BC1D574B2B3F065D00D05008 /* AInstagram.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC1D574D2B3F065D00D05008 /* Instagram_Tutorial */ = {
+		BC1D574D2B3F065D00D05008 /* AInstagram */ = {
 			isa = PBXGroup;
 			children = (
-				BC88D6F42B540D130051751A /* Instagram-Tutorial-Info.plist */,
+				BC88D6F42B540D130051751A /* AInstagram-Info.plist */,
 				BC1D57612B3F067B00D05008 /* Core */,
 				BC1D57602B3F067200D05008 /* App */,
 				BC1D575D2B3F067100D05008 /* Model */,
@@ -201,7 +201,7 @@
 				BC1D57542B3F065E00D05008 /* Preview Content */,
 				BC88D6F32B540C1B0051751A /* Config.xcconfig */,
 			);
-			path = Instagram_Tutorial;
+			path = AInstagram;
 			sourceTree = "<group>";
 		};
 		BC1D57542B3F065E00D05008 /* Preview Content */ = {
@@ -380,9 +380,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC1D574A2B3F065D00D05008 /* Instagram_Tutorial */ = {
+		BC1D574A2B3F065D00D05008 /* AInstagram */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC1D57592B3F065E00D05008 /* Build configuration list for PBXNativeTarget "Instagram_Tutorial" */;
+			buildConfigurationList = BC1D57592B3F065E00D05008 /* Build configuration list for PBXNativeTarget "AInstagram" */;
 			buildPhases = (
 				BC1D57472B3F065D00D05008 /* Sources */,
 				BC1D57482B3F065D00D05008 /* Frameworks */,
@@ -392,7 +392,7 @@
 			);
 			dependencies = (
 			);
-			name = Instagram_Tutorial;
+			name = AInstagram;
 			packageProductDependencies = (
 				BC1D57912B4A741700D05008 /* FirebaseAnalytics */,
 				BC1D57932B4A741700D05008 /* FirebaseAnalyticsOnDeviceConversion */,
@@ -425,7 +425,7 @@
 				BC88D6EF2B53FF430051751A /* OpenAIKit */,
 			);
 			productName = Instagram_Tutorial;
-			productReference = BC1D574B2B3F065D00D05008 /* Instagram_Tutorial.app */;
+			productReference = BC1D574B2B3F065D00D05008 /* AInstagram.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -443,7 +443,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BC1D57462B3F065D00D05008 /* Build configuration list for PBXProject "Instagram_Tutorial" */;
+			buildConfigurationList = BC1D57462B3F065D00D05008 /* Build configuration list for PBXProject "AInstagram" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -461,7 +461,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC1D574A2B3F065D00D05008 /* Instagram_Tutorial */,
+				BC1D574A2B3F065D00D05008 /* AInstagram */,
 			);
 		};
 /* End PBXProject section */
@@ -659,11 +659,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Instagram_Tutorial/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AInstagram/Preview Content\"";
 				DEVELOPMENT_TEAM = A6HM92H898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Instagram-Tutorial-Info.plist";
+				INFOPLIST_FILE = "AInstagram-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -689,11 +689,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Instagram_Tutorial/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AInstagram/Preview Content\"";
 				DEVELOPMENT_TEAM = A6HM92H898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Instagram-Tutorial-Info.plist";
+				INFOPLIST_FILE = "AInstagram-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -715,7 +715,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC1D57462B3F065D00D05008 /* Build configuration list for PBXProject "Instagram_Tutorial" */ = {
+		BC1D57462B3F065D00D05008 /* Build configuration list for PBXProject "AInstagram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC1D57572B3F065E00D05008 /* Debug */,
@@ -724,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC1D57592B3F065E00D05008 /* Build configuration list for PBXNativeTarget "Instagram_Tutorial" */ = {
+		BC1D57592B3F065E00D05008 /* Build configuration list for PBXNativeTarget "AInstagram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC1D575A2B3F065E00D05008 /* Debug */,
