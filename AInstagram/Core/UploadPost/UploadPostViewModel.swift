@@ -54,10 +54,16 @@ class UploadPostViewModel: ObservableObject {
         self.imageLoadingTask = nil
         
         Task {
-            try await uploadPost(image: image)
+            do {
+                try await uploadPost(image: image, currentPrompt: currentPrompt)
+                reset()
+            } catch {
+                print("Upload Post 에러:", error.localizedDescription)
+            }
         }
         
         isLoading = false
+        
     }
     
     func loadUsage() async {

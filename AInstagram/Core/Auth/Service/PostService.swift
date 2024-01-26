@@ -14,7 +14,11 @@ struct PostService {
     
     static func upload(post: Post) async {
         guard let encodedPost = try? Firestore.Encoder().encode(post) else { return }
-        try? await postDB.document(post.id).setData(encodedPost)
+        do {
+            try await postDB.document(post.id).setData(encodedPost)
+        } catch {
+            print("PostService Error:", error.localizedDescription)
+        }
     }
     
     static func loadAllPost() async throws -> [Post] {
