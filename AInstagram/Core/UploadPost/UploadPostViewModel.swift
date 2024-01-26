@@ -76,8 +76,8 @@ class UploadPostViewModel: ObservableObject {
         self.usageLeftToday = maxUsage - usageOfToday
     }
     
-    func uploadPost(image: UIImage?) async throws {
-        guard let user = AuthService.shared.currentUser, let caption = selectedPrompt?.content else { return }
+    func uploadPost(image: UIImage?, currentPrompt: String) async throws {
+        guard let user = AuthService.shared.currentUser else { return }
         
         guard let image, let imageURL = try await ImageUploader.uploadImage(image: image) else {
             return
@@ -88,7 +88,7 @@ class UploadPostViewModel: ObservableObject {
             creator: user,
             imageURL: imageURL,
             likes: 0,
-            caption: caption,
+            caption: currentPrompt,
             createdAt: .now
         )
         

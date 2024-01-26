@@ -31,7 +31,6 @@ struct UploadPostView: View {
                 Button(action: {
                     Task {
                         await viewModel.loadImage()
-                        self.viewModel.reset()
                         self.tabIndex = TabIndex.feed
                     }
                 }, label: {
