@@ -25,21 +25,13 @@ class UploadPostViewModel: ObservableObject {
     private var imageLoadingTask: Task<UIImage?, Never>?
     
     func loadRecentPrompts() async {
-        self.recommendedPrompts = [
-            "Generate a stunning concept for an expansive fantasy world, complete with enchanted forests, towering castles, and mythical creatures, setting the stage for a grand adventure.",
-            "Generate a cartoon character in the style of classic Disney animation, with large, expressive eyes and whimsical features.",
-            "Cityscape painting during a rainy day, focusing on reflections in puddles with a mix of soft and harsh brush strokes.",
-            "Surreal painting of a child dreaming about floating among stars, using soft, dreamy colors and elements of fantasy.",
-            "Generate poetic images of nature, blending landscapes and elements to convey the beauty and harmony of the natural world for nature-centric blogs/environmental causes.",
-            "Create stunning photos capturing the essence of a high-fashion runway show, featuring the latest couture."
-        ].map({ content in
-            Prompt(
-                text: content,
-                imageURL: URL(
-                    string: "https://w0.peakpx.com/wallpaper/674/554/HD-wallpaper-3d-lights-rays-colors-volume-ring-road-lights.jpg"
-                )
-            )
-        })
+        Task {
+            do {
+                self.recommendedPrompts = try await PromptService().fetchAllPrompts()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func loadImage() async {

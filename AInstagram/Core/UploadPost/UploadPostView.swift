@@ -111,14 +111,14 @@ struct UploadPostView: View {
                         ) { prompt in
                             HStack {
                                 Text(prompt.text)
-                                    .onTapGesture {
-                                        viewModel.selectedPrompt = prompt
-                                    }
                                 Spacer()
-                                KFImage(URL(string: "https://w0.peakpx.com/wallpaper/674/554/HD-wallpaper-3d-lights-rays-colors-volume-ring-road-lights.jpg"))
+                                KFImage(prompt.imageURL)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: 100, alignment: .trailing)
+                            }
+                            .onTapGesture {
+                                viewModel.selectedPrompt = prompt
                             }
                         }.listStyle(.plain)
                     }
