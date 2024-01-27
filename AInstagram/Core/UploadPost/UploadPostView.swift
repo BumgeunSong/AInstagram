@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UploadPostView: View {
     @StateObject private var viewModel = UploadPostViewModel()
     @Binding var tabIndex: Int
+    @State var showingRecentPrompts = false
     
     var body: some View {
         VStack {
@@ -71,30 +73,59 @@ struct UploadPostView: View {
                                 .tint(.gray)
                         }
                     }
-                    
+                }
+                .allowsHitTesting(!viewModel.isLoading)
+            }
+            VStack {
+                Divider().padding(.all)
+                Button(action: {
+                    showingRecentPrompts = true
+                }, label: {
+                    Text("추천 프롬프트")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(
+                            maxWidth: .infinity,
+                            alignment: .leading
+                        )
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                })
+                
+            }
+            .sheet(
+                isPresented: $showingRecentPrompts,
+                content: {
                     VStack {
-                        Divider().padding(.all)
-                        Text("최근 프롬프트")
+                        Text("추천 프롬프트")
+                            .font(.title3)
                             .fontWeight(.semibold)
                             .frame(
                                 maxWidth: .infinity,
                                 alignment: .leading
                             )
                             .padding(.horizontal)
-                        
+                            .padding(.vertical, 8)
                         List(
                             viewModel.recentPrompts,
                             id: \.id
                         ) { prompt in
-                            Text(prompt.content)
-                                .onTapGesture {
-                                    viewModel.selectedPrompt = prompt
-                                }
+                            HStack {
+                                Text(prompt.content)
+                                    .onTapGesture {
+                                        viewModel.selectedPrompt = prompt
+                                    }
+                                KFImage(URL(string: "https://w0.peakpx.com/wallpaper/674/554/HD-wallpaper-3d-lights-rays-colors-volume-ring-road-lights.jpg"))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: 100, alignment: .trailing)
+                            }
                         }.listStyle(.plain)
                     }
-                }
-                .allowsHitTesting(!viewModel.isLoading)
-            }
+                    .padding(.vertical)
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.automatic)
+            })
         }.task {
             await viewModel.loadRecentPrompts()
             await viewModel.loadUsage()
