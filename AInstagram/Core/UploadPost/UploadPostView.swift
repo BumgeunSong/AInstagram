@@ -76,7 +76,6 @@ struct UploadPostView: View {
                 .allowsHitTesting(!viewModel.isLoading)
             }
             VStack {
-                Divider().padding(.all)
                 Button(action: {
                     viewModel.showingRecommendedPrompts = true
                 }, label: {
@@ -88,8 +87,17 @@ struct UploadPostView: View {
                             alignment: .leading
                         )
                         .padding(.horizontal)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 24)
                 })
+                .overlay {
+                    UnevenRoundedRectangle(cornerRadii: .init(
+                        topLeading: 10,
+                        bottomLeading: 0,
+                        bottomTrailing: 0,
+                        topTrailing: 10
+                    ))
+                    .strokeBorder(lineWidth: 2)
+                }
                 
             }
             .sheet(
