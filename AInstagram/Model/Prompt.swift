@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Prompt: Identifiable, Hashable {
-    let id: String = UUID().uuidString
+struct Prompt: Identifiable, Hashable, Codable {
+    let id: String
     let text: String
     let imageURL: URL?
     
@@ -16,5 +16,11 @@ struct Prompt: Identifiable, Hashable {
         hasher.combine(id)
         hasher.combine(text)
         hasher.combine(imageURL)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text
+        case imageURL = "imageUrl"
     }
 }

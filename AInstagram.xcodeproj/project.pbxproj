@@ -80,6 +80,7 @@
 		BC88D6F62B54BDAC0051751A /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6F52B54BDAC0051751A /* Prompt.swift */; };
 		BC88D6F82B56BD500051751A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6F72B56BD500051751A /* PostService.swift */; };
 		BC88D6FA2B58F3780051751A /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6F92B58F3780051751A /* FeedViewModel.swift */; };
+		BC88D6FC2B64D40F0051751A /* PromptService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC88D6FB2B64D40F0051751A /* PromptService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		BC88D6F52B54BDAC0051751A /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		BC88D6F72B56BD500051751A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		BC88D6F92B58F3780051751A /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		BC88D6FB2B64D40F0051751A /* PromptService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BC1D57E62B4D7B7200D05008 /* UserService.swift */,
+				BC88D6FB2B64D40F0051751A /* PromptService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				BC1D57CC2B4A89ED00D05008 /* MainViewModel.swift in Sources */,
 				BC1D57E32B4B930E00D05008 /* ProfileEditView.swift in Sources */,
 				BC1D57812B46497A00D05008 /* User.swift in Sources */,
+				BC88D6FC2B64D40F0051751A /* PromptService.swift in Sources */,
 				BC1D57732B41551300D05008 /* FeedView.swift in Sources */,
 				BC1D57D12B4A94D800D05008 /* EmailPasswordTextField.swift in Sources */,
 				BC1D577D2B443C6F00D05008 /* LoginView.swift in Sources */,
