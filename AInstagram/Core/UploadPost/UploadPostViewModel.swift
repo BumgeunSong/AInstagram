@@ -19,7 +19,7 @@ class UploadPostViewModel: ObservableObject {
         }
     }
     @Published var recommendedPrompts: [Prompt] = []
-    @Published var showingRecommendedPrompts = true
+    @Published var showingRecommendedPrompts = false
     @Published var isLoading: Bool = false
     @Published var usageLeftToday: Int?
     private var imageLoadingTask: Task<UIImage?, Never>?
