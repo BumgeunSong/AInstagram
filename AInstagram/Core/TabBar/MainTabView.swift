@@ -17,20 +17,24 @@ struct MainTabView: View {
             FeedView()
                 .tabItem { Image(systemName: "house") }
                 .tag(TabIndex.feed)
+                .padding(.vertical, 8)
             SearchView(tabIndex: $selectedIndex, userToShowProfile: $userToShowProfile)
                 .tabItem { Image(systemName: "magnifyingglass") }
                 .tag(TabIndex.search)
+                .padding(.vertical, 8)
             UploadPostView(tabIndex: $selectedIndex)
                 .tabItem { Image(systemName: "plus.square") }
                 .tag(TabIndex.uploadPost)
-            Text("Notifications")
+                .padding(.vertical, 8)
+            Text("업데이트 예정이에요!")
                 .tabItem { Image(systemName: "heart") }
                 .tag(TabIndex.notifications)
+                .padding(.vertical, 8)
             ProfileView(userToShowProfile: $userToShowProfile)
                 .tabItem { Image(systemName: "person") }
                 .tag(TabIndex.profile)
+                .padding(.vertical, 8)
         }
-        .padding(.vertical)
     }
 }
 
