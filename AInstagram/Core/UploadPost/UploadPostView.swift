@@ -11,7 +11,6 @@ import Kingfisher
 struct UploadPostView: View {
     @StateObject private var viewModel = UploadPostViewModel()
     @Binding var tabIndex: Int
-    @State var showingRecentPrompts = false
     
     var body: some View {
         VStack {
@@ -79,7 +78,7 @@ struct UploadPostView: View {
             VStack {
                 Divider().padding(.all)
                 Button(action: {
-                    showingRecentPrompts = true
+                    viewModel.showingRecommendedPrompts = true
                 }, label: {
                     Text("추천 프롬프트")
                         .font(.title3)
@@ -94,7 +93,7 @@ struct UploadPostView: View {
                 
             }
             .sheet(
-                isPresented: $showingRecentPrompts,
+                isPresented: $viewModel.showingRecommendedPrompts,
                 content: {
                     VStack {
                         Text("추천 프롬프트")
@@ -107,11 +106,11 @@ struct UploadPostView: View {
                             .padding(.horizontal)
                             .padding(.vertical, 8)
                         List(
-                            viewModel.recentPrompts,
+                            viewModel.recommendedPrompts,
                             id: \.id
                         ) { prompt in
                             HStack {
-                                Text(prompt.content)
+                                Text(prompt.text)
                                     .onTapGesture {
                                         viewModel.selectedPrompt = prompt
                                     }

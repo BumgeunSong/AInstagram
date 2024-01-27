@@ -13,18 +13,19 @@ class UploadPostViewModel: ObservableObject {
     @Published var currentPrompt: String = .empty
     @Published var selectedPrompt: Prompt? {
         didSet {
-            if let content = selectedPrompt?.content {
+            if let content = selectedPrompt?.text {
                 currentPrompt = content
             }
         }
     }
-    @Published var recentPrompts: [Prompt] = []
+    @Published var recommendedPrompts: [Prompt] = []
+    @Published var showingRecommendedPrompts = false
     @Published var isLoading: Bool = false
     @Published var usageLeftToday: Int?
     private var imageLoadingTask: Task<UIImage?, Never>?
     
     func loadRecentPrompts() async {
-        self.recentPrompts = [
+        self.recommendedPrompts = [
             "Generate a stunning concept for an expansive fantasy world, complete with enchanted forests, towering castles, and mythical creatures, setting the stage for a grand adventure.",
             "Generate a cartoon character in the style of classic Disney animation, with large, expressive eyes and whimsical features.",
             "Cityscape painting during a rainy day, focusing on reflections in puddles with a mix of soft and harsh brush strokes.",
@@ -32,7 +33,12 @@ class UploadPostViewModel: ObservableObject {
             "Generate poetic images of nature, blending landscapes and elements to convey the beauty and harmony of the natural world for nature-centric blogs/environmental causes.",
             "Create stunning photos capturing the essence of a high-fashion runway show, featuring the latest couture."
         ].map({ content in
-            Prompt(content: content)
+            Prompt(
+                text: content,
+                imageURL: URL(
+                    string: "https://w0.peakpx.com/wallpaper/674/554/HD-wallpaper-3d-lights-rays-colors-volume-ring-road-lights.jpg"
+                )
+            )
         })
     }
     

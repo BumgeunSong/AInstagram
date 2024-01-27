@@ -9,10 +9,12 @@ import Foundation
 
 struct Prompt: Identifiable, Hashable {
     let id: String = UUID().uuidString
-    let content: String
+    let text: String
+    let imageURL: URL?
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(content)
+        hasher.combine(text)
+        hasher.combine(imageURL)
     }
 }
