@@ -96,7 +96,7 @@ struct UploadPostView: View {
                         bottomTrailing: 0,
                         topTrailing: 10
                     ))
-                    .strokeBorder(lineWidth: 2)
+                    .strokeBorder(lineWidth: 1)
                 }
                 
             }
