@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             AInstagramTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+                    Greeting("Eddy")
                 }
             }
         }
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-            text = "Hello $name!",
+            text = "제 이름은 ($name)입니다!",
             modifier = modifier
     )
 }
@@ -38,6 +38,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     AInstagramTheme {
-        Greeting("Android")
+        Greeting("Eddy")
     }
 }
