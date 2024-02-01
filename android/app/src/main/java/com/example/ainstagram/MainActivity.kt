@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ainstagram.ui.theme.AInstagramTheme
 
@@ -28,10 +29,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
+    Surface(color = Color.LightGray) {
+        Text(
             text = "제 이름은 ($name)입니다!",
             modifier = modifier
-    )
+        )
+    }
 }
 
 @Preview(showBackground = true)
