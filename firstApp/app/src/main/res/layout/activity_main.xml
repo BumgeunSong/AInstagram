@@ -12,5 +12,29 @@
         android:src="@drawable/ai_profile"
         android:contentDescription="TODO" />
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ai_profile_2"
+        android:contentDescription="TODO" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ai_profile_3"
+        android:contentDescription="TODO" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ai_profile_5"
+        android:contentDescription="TODO" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ai_profile_5"
+        android:contentDescription="TODO" />
+
 
 </LinearLayout>
