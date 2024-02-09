@@ -11,19 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="120dp">
         <ImageView
+            android:id="@+id/profile_1"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/ai_profile"
+            android:src="@drawable/ai_profile_1"
             android:contentDescription="TODO" />
 
         <ImageView
-            android:id="@+id/profile_1"
+            android:id="@+id/profile_2"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ai_profile_2"
             android:contentDescription="TODO" />
 
         <ImageView
+            android:id="@+id/profile_3"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ai_profile_3"
@@ -34,12 +36,14 @@
         android:layout_width="match_parent"
         android:layout_height="120dp">
         <ImageView
+            android:id="@+id/profile_4"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ai_profile_4"
             android:contentDescription="TODO" />
 
         <ImageView
+            android:id="@+id/profile_5"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/ai_profile_5"
