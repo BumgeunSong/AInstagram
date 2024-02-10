@@ -8,7 +8,7 @@ import android.widget.TextView
 import com.eddy.firstapp.databinding.ActivityDetailBinding
 import com.eddy.firstapp.databinding.ActivityMainBinding
 
-class PromptAdapter(val List: MutableList<String>): BaseAdapter() {
+class PromptAdapter(val List: List<String>): BaseAdapter() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -28,8 +28,7 @@ class PromptAdapter(val List: MutableList<String>): BaseAdapter() {
 
         if (convertView == null) {
             val promptItemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_prompt, parent, false)
-            val title = promptItemView!!.findViewById<TextView>(R.id.promptItem)
-            title?.text = List[position]
+            promptItemView!!.findViewById<TextView>(R.id.promptItem).text = List[position]
             return promptItemView
         }
 

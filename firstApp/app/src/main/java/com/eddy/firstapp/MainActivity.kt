@@ -3,6 +3,7 @@ package com.eddy.firstapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.eddy.firstapp.databinding.ActivityMainBinding
 import android.widget.Adapter as Adapter
 
@@ -46,15 +47,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var promptList = mutableListOf<String>()
-
-        promptList.add("Create an abstract painting depicting the feeling of joy")
-        promptList.add("Create a 3D rendering of an ultramodern smart home")
-        promptList.add("Create an abstract painting inspired by the rush hour traffic in New York City")
+        val promptList = listOf<String>(
+            "하늘을 나는 작은 새",
+            "꽃에서 여러 페인트가 팡팡 터진다",
+            "플로럴 향 핸드크림 제품 목업"
+        )
 
         val promptAdapter = PromptAdapter(promptList)
-
         binding.promptListView.adapter = promptAdapter
+
+        binding.promptListView.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this, promptList[position], Toast.LENGTH_SHORT).show()
+        }
 
     }
 }
