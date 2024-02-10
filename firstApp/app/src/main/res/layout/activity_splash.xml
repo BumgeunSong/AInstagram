@@ -15,7 +15,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:src="@drawable/Ainstagram_logo"/>
+        android:src="@drawable/ainstagram_logo"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
