@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.eddy.firstapp.databinding.ActivityMainBinding
+import android.widget.Adapter as Adapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,5 +45,16 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("imageId", R.drawable.ai_profile_5)
             startActivity(intent)
         }
+
+        var promptList = mutableListOf<String>()
+
+        promptList.add("Create an abstract painting depicting the feeling of joy")
+        promptList.add("Create a 3D rendering of an ultramodern smart home")
+        promptList.add("Create an abstract painting inspired by the rush hour traffic in New York City")
+
+        val promptAdapter = PromptAdapter(promptList)
+
+        binding.promptListView.adapter = promptAdapter
+
     }
 }
