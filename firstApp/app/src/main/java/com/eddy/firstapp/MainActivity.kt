@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
 import com.eddy.firstapp.databinding.ActivityMainBinding
 import android.widget.Adapter as Adapter
 
@@ -59,6 +60,9 @@ class MainActivity : AppCompatActivity() {
         binding.promptListView.setOnItemClickListener { parent, view, position, id ->
             Toast.makeText(this, promptList[position].text, Toast.LENGTH_SHORT).show()
         }
+
+        val promptRecyclerAdapter = PromptRecyclerAdapter(promptList)
+        binding.promptRecyclerView.adapter = promptRecyclerAdapter
 
     }
 }
