@@ -49,9 +49,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val promptList = listOf<Prompt>(
-            Prompt("하늘을 나는 작은 새", imageURL = null),
-            Prompt("꽃에서 여러 페인트가 팡팡 터진다", imageURL = null),
-            Prompt("플로럴 향 핸드크림 제품 목업", imageURL = null)
+            Prompt("minji0_rose", imageURL = null),
+            Prompt("Kate_Min", imageURL = null),
+            Prompt("Vanilla_choco", imageURL = null),
+            Prompt("Hackers_182", imageURL = null),
+            Prompt("Summer_rabbit", imageURL = null),
         )
 
         val promptAdapter = PromptAdapter(promptList)
