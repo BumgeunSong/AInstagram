@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_main">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/imageFragment">
 
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.eddy.firstapp.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/promptFragment"
+        android:name="com.eddy.firstapp.PromptFragment"
+        android:label="fragment_prompt"
+        tools:layout="@layout/fragment_prompt" />
+    <fragment
+        android:id="@+id/promptRecyclerFragment"
+        android:name="com.eddy.firstapp.PromptRecyclerFragment"
+        android:label="fragment_prompt_recycler"
+        tools:layout="@layout/fragment_prompt_recycler" />
 </navigation>
