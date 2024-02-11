@@ -47,17 +47,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val promptList = listOf<String>(
-            "하늘을 나는 작은 새",
-            "꽃에서 여러 페인트가 팡팡 터진다",
-            "플로럴 향 핸드크림 제품 목업"
+        val promptList = listOf<Prompt>(
+            Prompt("하늘을 나는 작은 새", imageURL = null),
+            Prompt("꽃에서 여러 페인트가 팡팡 터진다", imageURL = null),
+            Prompt("플로럴 향 핸드크림 제품 목업", imageURL = null)
         )
 
         val promptAdapter = PromptAdapter(promptList)
         binding.promptListView.adapter = promptAdapter
 
         binding.promptListView.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this, promptList[position], Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, promptList[position].text, Toast.LENGTH_SHORT).show()
         }
 
     }

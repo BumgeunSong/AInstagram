@@ -4,11 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.eddy.firstapp.databinding.ActivityDetailBinding
 import com.eddy.firstapp.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class PromptAdapter(val List: List<String>): BaseAdapter() {
+class PromptAdapter(val List: List<Prompt>): BaseAdapter() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -28,7 +32,7 @@ class PromptAdapter(val List: List<String>): BaseAdapter() {
 
         if (convertView == null) {
             val promptItemView = LayoutInflater.from(parent?.context).inflate(R.layout.item_prompt, parent, false)
-            promptItemView!!.findViewById<TextView>(R.id.promptItem).text = List[position]
+            promptItemView!!.findViewById<TextView>(R.id.promptItem).text = List[position].text
             return promptItemView
         }
 
