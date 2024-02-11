@@ -9,15 +9,36 @@
         android:id="@+id/imageFragment"
         android:name="com.eddy.firstapp.ImageFragment"
         android:label="fragment_image"
-        tools:layout="@layout/fragment_image" />
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/action_imageFragment_to_promptFragment"
+            app:destination="@id/promptFragment" />
+        <action
+            android:id="@+id/action_imageFragment_to_promptRecyclerFragment"
+            app:destination="@id/promptRecyclerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/promptFragment"
         android:name="com.eddy.firstapp.PromptFragment"
         android:label="fragment_prompt"
-        tools:layout="@layout/fragment_prompt" />
+        tools:layout="@layout/fragment_prompt" >
+        <action
+            android:id="@+id/action_promptFragment_to_promptRecyclerFragment"
+            app:destination="@id/promptRecyclerFragment" />
+        <action
+            android:id="@+id/action_promptFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/promptRecyclerFragment"
         android:name="com.eddy.firstapp.PromptRecyclerFragment"
         android:label="fragment_prompt_recycler"
-        tools:layout="@layout/fragment_prompt_recycler" />
+        tools:layout="@layout/fragment_prompt_recycler" >
+        <action
+            android:id="@+id/action_promptRecyclerFragment_to_promptFragment"
+            app:destination="@id/promptFragment" />
+        <action
+            android:id="@+id/action_promptRecyclerFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
 </navigation>
