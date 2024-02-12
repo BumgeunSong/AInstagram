@@ -1,15 +1,24 @@
 package com.eddy.firstapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.eddy.firstapp.databinding.FragmentImageBinding
 
 class ImageFragment : Fragment() {
+
+    private var _binding: FragmentImageBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,16 +27,16 @@ class ImageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_image, container, false)
+        _binding = FragmentImageBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        val promptListButton = view.findViewById<Button>(R.id.promptListButton)
-        val promptRecyclerButton = view.findViewById<Button>(R.id.promptRecyclerButton)
-
-        promptListButton.setOnClickListener {
+        binding.promptListButton.setOnClickListener {
+            Log.i("ImageFragment", "promptListButton")
             it.findNavController().navigate(R.id.action_imageFragment_to_promptFragment)
         }
 
-        promptRecyclerButton.setOnClickListener {
+        binding.promptRecyclerButton.setOnClickListener {
+            Log.i("ImageFragment", "promptRecyclerButton")
             it.findNavController().navigate(R.id.action_imageFragment_to_promptRecyclerFragment)
         }
 
