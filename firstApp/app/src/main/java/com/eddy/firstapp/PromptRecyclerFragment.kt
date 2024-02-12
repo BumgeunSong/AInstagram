@@ -7,8 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
+import com.eddy.firstapp.databinding.FragmentPromptRecyclerBinding
 
 class PromptRecyclerFragment : Fragment() {
+
+    private var _binding: FragmentPromptRecyclerBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -17,17 +22,25 @@ class PromptRecyclerFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_image, container, false)
+        _binding = FragmentPromptRecyclerBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        val imageButton = view.findViewById<Button>(R.id.imageButton)
-        val promptListButton = view.findViewById<Button>(R.id.promptListButton)
+        val promptList = listOf<Prompt>(
+            Prompt("minji0_rose", imageURL = null),
+            Prompt("Kate_Min", imageURL = null),
+            Prompt("Vanilla_choco", imageURL = null),
+            Prompt("Hackers_182", imageURL = null),
+            Prompt("Summer_rabbit", imageURL = null),
+        )
 
-        imageButton.setOnClickListener {
+        val promptRecyclerAdapter = PromptRecyclerAdapter(promptList)
+        binding.promptRecyclerView.adapter = promptRecyclerAdapter
+
+        binding.imageButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_promptRecyclerFragment_to_imageFragment)
         }
 
-        promptListButton.setOnClickListener {
+        binding.promptListButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_promptRecyclerFragment_to_promptFragment)
         }
 
