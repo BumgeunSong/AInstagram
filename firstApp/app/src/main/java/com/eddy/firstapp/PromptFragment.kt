@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.eddy.firstapp.databinding.ActivityMainBinding
+import com.eddy.firstapp.databinding.FragmentImageBinding
+import com.eddy.firstapp.databinding.FragmentPromptBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +23,12 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class PromptFragment : Fragment() {
+
+    private var _binding: FragmentPromptBinding? = null
+    // This property is only valid between onCreateView and
+// onDestroyView.
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -28,17 +37,25 @@ class PromptFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_image, container, false)
+        _binding = FragmentPromptBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        val imageButton = view.findViewById<Button>(R.id.imageButton)
-        val promptRecyclerButton = view.findViewById<Button>(R.id.promptRecyclerButton)
+        val promptList = listOf<Prompt>(
+            Prompt("minji0_rose", imageURL = null),
+            Prompt("Kate_Min", imageURL = null),
+            Prompt("Vanilla_choco", imageURL = null),
+            Prompt("Hackers_182", imageURL = null),
+            Prompt("Summer_rabbit", imageURL = null),
+        )
 
-        imageButton.setOnClickListener {
+        val promptAdapter = PromptAdapter(promptList)
+        binding.promptListView.adapter = promptAdapter
+
+        binding.imageButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_promptFragment_to_imageFragment)
         }
 
-        promptRecyclerButton.setOnClickListener {
+        binding.promptRecyclerButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_promptFragment_to_promptRecyclerFragment)
         }
 
