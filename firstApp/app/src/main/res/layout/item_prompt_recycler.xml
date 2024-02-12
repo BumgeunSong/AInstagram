@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="80dp">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="28dp"
+android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/recyclerItemText"
-        android:text="디폴트 리사이클러 아이템"
-        android:textSize="28sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
+<TextView
+    android:id="@+id/recyclerItemText"
+    android:textSize="28sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="리사이클러 디폴트 텍스트"/>
+</FrameLayout>
