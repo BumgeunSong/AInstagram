@@ -24,8 +24,11 @@ class PromptRecyclerAdapter(val items: List<Prompt>) : RecyclerView.Adapter<Prom
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val textView: TextView
+        init {
+            textView = itemView.findViewById<TextView>(R.id.recyclerItemText)
+        }
         fun bindItems(item: Prompt) {
-            val textView = itemView.findViewById<TextView>(R.id.recyclerItemText)
             textView.text = item.text
         }
     }
