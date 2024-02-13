@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1086211691702",
+    "project_id": "ainstagram-3c801",
+    "storage_bucket": "ainstagram-3c801.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086211691702:android:1ddc554df1eb2355a14217",
+        "android_client_info": {
+          "package_name": "com.eddy.firstapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwIX0GYsfg0hToBR0dnMqYc1b6-hdkdN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
