@@ -2,10 +2,21 @@ package com.eddy.firstapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.eddy.firstapp.databinding.ActivityDetailBinding
+import com.eddy.firstapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
+    private val binding: ActivityLoginBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(binding.root)
+
+        binding.loginButton.setOnClickListener {
+            Log.d("LoginActivity", binding.emailField.text.toString())
+            Log.d("LoginActivity", binding.passwordField.text.toString())
+        }
     }
 }
